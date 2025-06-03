@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://ashok8601.github.io/Syistgroup/</loc>
-  <lastmod>2025-06-02T15:38:46+00:00</lastmod>
-</url>
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://ashok8601.github.io/Syistgroup/</loc>
+  </url>
+  <url>
+    <loc>https://ashok8601.github.io/Syistgroup/GATE22CSE.html</loc>
+  </url>
+  <url>
+    <loc>https://ashok8601.github.io/Syistgroup/GATE23CSE.html</loc>
+  </url>
+  <url>
+    <loc>https://ashok8601.github.io/Syistgroup/GATE24CSE.html</loc>
+  </url>
 </urlset>
