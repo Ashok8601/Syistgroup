@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Python me Calculator app kaise banaye? Yeh guide aapko step by step batayegi ki Python GUI ke sath apna calculator app kaise banaye using Tkinter.">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="python calculator app, python calculator in hindi, python tkinter app">
+  <title>Python me Calculator App Kaise Banaye - Full Step by Step Guide (Hindi)</title>
+</head>
+<body>
+  <header>
+    <h1>Python me Calculator App Kaise Banaye - Step by Step Guide (Hindi)</h1>
+    <p><strong>Author:</strong> Ashok Kumar | <strong>Updated:</strong> July 2025</p>
+  </header>
+
+  <article>
+    <section>
+      <h2>Intro: Python aur GUI Development</h2>
+      <p>
+        Python ek simple aur beginner-friendly programming language hai. Python ke sath GUI (Graphical User Interface) apps banana bhi easy hota hai. 
+        Aaj hum sikhenge ki <strong>Python me ek simple calculator app kaise banaye</strong>, wo bhi bina kisi external library ke, sirf <code>Tkinter</code> use karke.
+      </p>
+    </section>
+
+    <section>
+      <h2>Calculator App Banane ke Liye Kya-Kya Chahiye?</h2>
+      <ul>
+        <li>Python 3.x Installed</li>
+        <li>Basic Python Knowledge</li>
+        <li>Tkinter Module (Python ke sath aata hai)</li>
+        <li>Koi Text Editor – Jaise VS Code, Sublime, Notepad++</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Step 1: Tkinter ka Introduction</h2>
+      <p>
+        Tkinter ek built-in GUI library hai Python me. Iska use karke aap windows, buttons, input boxes etc. create kar sakte ho.
+      </p>
+    </section>
+
+    <section>
+      <h2>Step 2: Basic Calculator Layout Design</h2>
+<pre><code class="language-python">
+from tkinter import *
+
+root = Tk()
+root.title("Simple Calculator")
+
+entry = Entry(root, width=35, borderwidth=5)
+entry.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
+</code></pre>
+      <p>Yeh code ek basic window aur ek input box create karega.</p>
+    </section>
+
+    <section>
+      <h2>Step 3: Button Functions Create Karna</h2>
+<pre><code class="language-python">
+def button_click(number):
+    current = entry.get()
+    entry.delete(0, END)
+    entry.insert(0, current + str(number))
+</code></pre>
+      <p>Yeh function numbers ko screen par dikhata hai jab user button dabata hai.</p>
+    </section>
+
+    <section>
+      <h2>Step 4: Mathematical Function Add Karna</h2>
+<pre><code class="language-python">
+def button_add():
+    first_number = entry.get()
+    global f_num
+    global math
+    math = "addition"
+    f_num = int(first_number)
+    entry.delete(0, END)
+
+def button_equal():
+    second_number = entry.get()
+    entry.delete(0, END)
+    if math == "addition":
+        entry.insert(0, f_num + int(second_number))
+</code></pre>
+    </section>
+
+    <section>
+      <h2>Step 5: Buttons Create Karna</h2>
+<pre><code class="language-python">
+button_1 = Button(root, text="1", padx=40, pady=20, command=lambda: button_click(1))
+button_1.grid(row=3, column=0)
+# Aise hi aur buttons bana lo
+</code></pre>
+    </section>
+
+    <section>
+      <h2>Final Code: Complete Calculator App</h2>
+      <p>Yeh raha full working code:</p>
+<pre><code class="language-python">
+# Full code ko yaha paste karo
+</code></pre>
+    </section>
+
+    <section>
+      <h2>Bonus: Calculator App ko .exe File me Convert Kaise Kare?</h2>
+      <p>
+        Aap pyinstaller ya auto-py-to-exe ka use karke apne calculator app ko Windows .exe file me convert kar sakte ho. 
+      </p>
+      <ul>
+        <li><code>pip install pyinstaller</code></li>
+        <li><code>pyinstaller --onefile calculator.py</code></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>FAQs (Frequently Asked Questions)</h2>
+      <h3>1. Kya ye calculator scientific calculator hai?</h3>
+      <p>Nahi, ye ek simple 4-function calculator hai. Aap features add kar ke ise advanced bana sakte ho.</p>
+      <h3>2. Kya Tkinter mobile app ke liye kaam karta hai?</h3>
+      <p>Nahi, ye sirf desktop apps ke liye hota hai.</p>
+    </section>
+
+    <section>
+      <h2>Conclusion</h2>
+      <p>
+        Aapne is article me sikha ki kaise Python ke sath ek GUI calculator app banate hain. Yeh beginner friendly project aapke programming confidence ko boost karega.
+      </p>
+      <p>
+        Aap is code me aur functionality add karke ise aur useful bana sakte ho. Python aur Tkinter ke aur bhi projects ke liye humari website explore karte rahiye!
+      </p>
+    </section>
+  </article>
+
+  <footer>
+    <p>&copy; 2025 Syist Group | Learn Python & Programming in Hindi</p>
+  </footer>
+</body>
+</html>
