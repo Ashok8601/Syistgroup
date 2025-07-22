@@ -1,27 +1,129 @@
-<!DOCTYPE html>
-<html lang="hi">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Python me Calculator app kaise banaye? Yeh guide aapko step by step batayegi ki Python GUI ke sath apna calculator app kaise banaye using Tkinter.">
-  <meta name="robots" content="index, follow">
-  <meta name="keywords" content="python calculator app, python calculator in hindi, python tkinter app">
-  <title>Python me Calculator App Kaise Banaye - Full Step by Step Guide (Hindi)</title>
-    <link rel="canonical" href="https://syistgroup.onrender.com/about">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SyistGroup - Learn Python Programming, Web Development, and Coding with expert resources. Explore SEO-optimized tutorials, projects, and developer content to grow your tech skills with Syist.">
+  <meta name="keywords" content="Syist, SyistGroup, Python Programming, Learn Coding, Flask Projects, CodeWithHarry Alternative, Coding for Beginners, Web Development, GitHub Projects, Django, C++, SQLite3, AI Learning">
+  <meta name="author" content="Ashok Kumar">
+  <title>About SyistGroup | Python Programming, Coding & Web Development</title>
+  <link rel="canonical" href="https://syistgroup.onrender.com/about">
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.7; color: #333; padding: 20px; background: #fafafa; }
+    h1, h2, h3 { color: #005a87; }
+    a { color: #007acc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 900px; margin: auto; background: #fff; padding: 40px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+  </style>
 </head>
-<body>
-  <header>
-    <h1>Python me Calculator App Kaise Banaye - Step by Step Guide (Hindi)</h1>
-    <p><strong>Author:</strong> Ashok Kumar | <strong>Updated:</strong> July 2025</p>
-  </header>
 
-  <article>
-    <section>
-      <h2>Intro: Python aur GUI Development</h2>
-      <p>
-        Python ek simple aur beginner-friendly programming language hai. Python ke sath GUI (Graphical User Interface) apps banana bhi easy hota hai. 
-        Aaj hum sikhenge ki <strong>Python me ek simple calculator app kaise banaye</strong>, wo bhi bina kisi external library ke, sirf <code>Tkinter</code> use karke.
-      </p>
+<body>
+  <a href="/mobile-kho-gaya" style="display: inline-block; padding: 12px 24px; background-color: #ff5722; color: white; font-size: 16px; border: none; border-radius: 8px; text-decoration: none; font-family: Arial, sans-serif;">
+  Mobile Kho Gaya Ye Kare
+</a>
+  <header>
+    <h1>गुम हुआ मोबाइल कैसे खोजें? - 2025 की पूरी गाइड हिंदी में</h1>
+    <p>अपने खोए हुए Android या iPhone को ढूंढने के सबसे आसान और प्रभावी तरीके</p>
+  </header>
+  <nav>
+    <a href="#android">Android ट्रैक करें</a>
+    <a href="#iphone">iPhone खोजें</a>
+    <a href="#imei">IMEI से ट्रैकिंग</a>
+    <a href="#safety">सुरक्षा के उपाय</a>
+    <a href="#faq">FAQs</a>
+  </nav>
+  <main>
+    <section id="intro" class="section">
+      <h2>परिचय</h2>
+      <p>आज के समय में मोबाइल फोन हमारे जीवन का अभिन्न हिस्सा बन चुका है। इसमें हमारी पर्सनल जानकारी, बैंक डिटेल्स, सोशल मीडिया, और फोटो जैसी जरूरी चीजें होती हैं। ऐसे में अगर मोबाइल गुम हो जाए, तो सिर्फ उसका दाम ही नहीं बल्कि हमारी जानकारी की सुरक्षा भी खतरे में आ जाती है। इस गाइड में हम आपको बताएंगे कि कैसे आप गुम हुए मोबाइल को मिनटों में ट्रैक कर सकते हैं और अपनी जानकारी को सुरक्षित कर सकते हैं।</p>
+    </section><section id="android" class="section">
+  <h2>Android मोबाइल ट्रैक करने का तरीका</h2>
+  <h3>Google Find My Device की मदद से:</h3>
+  <ol>
+    <li><strong>Step 1:</strong> किसी कंप्यूटर या दूसरे फोन से <a href="https://www.google.com/android/find" target="_blank">Google Find My Device</a> पर जाएं।</li>
+    <li><strong>Step 2:</strong> उसी Gmail ID से लॉगिन करें जो खोए हुए मोबाइल में थी।</li>
+    <li><strong>Step 3:</strong> अब आपको उस डिवाइस की location दिखाई देगी (अगर ऑन और इंटरनेट चालू है)।</li>
+    <li><strong>Step 4:</strong> आप वहां से मोबाइल को <strong>Ring</strong>, <strong>Lock</strong> या <strong>Erase</strong> कर सकते हैं।</li>
+  </ol>
+  <div class="tip">
+    <strong>💡 सुझाव:</strong> 'Secure Device' का ऑप्शन चुनें और रिकवरी मैसेज डालें ताकि जिसने भी आपका मोबाइल पाया है, वह आपको कॉल कर सके।
+  </div>
+  <div class="warning">
+    <strong>⚠️ चेतावनी:</strong> Erase ऑप्शन से सारा डेटा डिलीट हो जाएगा, लेकिन डिवाइस ट्रैक नहीं हो पाएगा बाद में।
+  </div>
+</section>
+
+<section id="iphone" class="section">
+  <h2>iPhone कैसे ट्रैक करें?</h2>
+  <p>अगर आपने Find My iPhone फीचर ऑन किया है, तो आप अपने iPhone को बहुत आसानी से खोज सकते हैं:</p>
+  <ol>
+    <li><strong>Step 1:</strong> किसी ब्राउज़र से <a href="https://www.icloud.com/find" target="_blank">iCloud.com</a> पर जाएं।</li>
+    <li><strong>Step 2:</strong> अपनी Apple ID से लॉगिन करें।</li>
+    <li><strong>Step 3:</strong> 'Find iPhone' पर क्लिक करें और डिवाइस चुनें।</li>
+    <li><strong>Step 4:</strong> यहां भी आप मोबाइल को <strong>Lost Mode</strong>, <strong>Erase</strong>, या <strong>Play Sound</strong> कर सकते हैं।</li>
+  </ol>
+  <div class="note">
+    <strong>📝 ध्यान दें:</strong> Lost Mode में आप एक कस्टम मैसेज और नंबर डाल सकते हैं ताकि संपर्क किया जा सके।
+  </div>
+</section>
+
+<section id="imei" class="section">
+  <h2>IMEI नंबर से मोबाइल कैसे ट्रैक करें?</h2>
+  <p>अगर डिवाइस ऑफलाइन हो गया है या इंटरनेट बंद है, तो आप <strong>IMEI नंबर</strong> के ज़रिए भी ट्रैकिंग कर सकते हैं।</p>
+  <h3>IMEI पता करने का तरीका:</h3>
+  <ul>
+    <li>फोन के डब्बे (Box) पर या बिल पर IMEI नंबर लिखा होता है।</li>
+    <li>अगर आपने पहले *#06# डायल किया था, तो नोट की गई IMEI काम आएगी।</li>
+  </ul>
+  <h3>ट्रैकिंग कैसे करें?</h3>
+  <ol>
+    <li>अपने नजदीकी पुलिस स्टेशन में रिपोर्ट दर्ज करें।</li>
+    <li>Cyber Crime पोर्टल: <a href="https://www.cybercrime.gov.in" target="_blank">cybercrime.gov.in</a> पर जाएं।</li>
+    <li>IMEI ब्लॉक और ट्रैकिंग के लिए CEIR पोर्टल: <a href="https://ceir.gov.in" target="_blank">ceir.gov.in</a></li>
+    <li>वहां अपना IMEI, खोने का स्थान, और FIR नंबर दर्ज करें।</li>
+  </ol>
+  <div class="tip">
+    <strong>💡 ट्रिक:</strong> आप चाहें तो CEIR के ज़रिए अपने मोबाइल को ब्लॉक भी कर सकते हैं ताकि कोई उसका गलत उपयोग न कर सके।
+  </div>
+</section>
+
+<section id="safety" class="section">
+  <h2>भविष्य में मोबाइल खोने से कैसे बचें?</h2>
+  <ul>
+    <li>हमेशा <strong>Find My Device</strong> और <strong>Location</strong> चालू रखें।</li>
+    <li>Screen Lock और Fingerprint का उपयोग करें।</li>
+    <li>Cloud में डाटा का बैकअप रखें।</li>
+    <li>महत्वपूर्ण apps पर दो-स्तरीय सुरक्षा (2FA) लगाएं।</li>
+    <li>IMEI नंबर को कहीं सुरक्षित नोट करके रखें।</li>
+  </ul>
+</section>
+
+<section id="faq" class="section">
+  <h2>अक्सर पूछे जाने वाले सवाल (FAQs)</h2>
+  <div class="note">
+    <strong>Q:</strong> क्या मोबाइल ऑफ होने पर भी ट्रैक किया जा सकता है?<br>
+    <strong>A:</strong> नहीं, लेकिन जैसे ही ऑन होगा, लोकेशन अपडेट हो सकती है।
+  </div>
+  <div class="note">
+    <strong>Q:</strong> बिना Gmail या Apple ID के क्या कर सकते हैं?<br>
+    <strong>A:</strong> आप पुलिस व CEIR पोर्टल का सहारा लें।
+  </div>
+  <div class="note">
+    <strong>Q:</strong> क्या पुलिस मेरा मोबाइल ढूंढ सकती है?<br>
+    <strong>A:</strong> हां, अगर आपने IMEI और FIR दी है तो मदद मिल सकती है।
+  </div>
+</section>
+
+<section class="section">
+  <h2>निष्कर्ष (Conclusion)</h2>
+  <p>मोबाइल खोने की स्थिति में घबराएं नहीं। ऊपर बताए गए तरीकों को step-by-step अपनाकर आप अपने मोबाइल को खोज सकते हैं या कम से कम डेटा को सुरक्षित रख सकते हैं। सबसे जरूरी बात यह है कि <strong>prevention</strong> ही सबसे अच्छा उपाय है। इस गाइड को अपने दोस्तों और परिवार के साथ जरूर साझा करें ताकि वे भी समय पर action ले सकें।</p>
+</section>
+
+  </main>
+  <footer>
+    <p>&copy; 2025 - गुम हुआ मोबाइल गाइड | Developed by Ashok Kumar | Hindi SEO UI/UX Version</p>
+  </footer>
+</body>
+</html>>
     </section>
 
     <section>
