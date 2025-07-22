@@ -22,7 +22,18 @@
   <meta property="og:url" content="https://syistgroup.onrender.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://syistgroup.onrender.com/static/logo.png" />
+   <script>
+  (function () {
+    var host = window.location.hostname;
+    var protocol = window.location.protocol;
+    var pathname = window.location.pathname + window.location.search;
 
+    // If not https OR not www
+    if (protocol !== 'https:' || host === 'syistgroup.onrender.com') {
+      window.location.href = 'https://www.syistgroup.onrender.com' + pathname;
+    }
+  })();
+   </script>
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Syist Group | Learn Python, Programming & Development" />
