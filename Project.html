@@ -23,16 +23,9 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://syistgroup.onrender.com/static/logo.png" />
    <script>
-  (function () {
-    var host = window.location.hostname;
-    var protocol = window.location.protocol;
-    var pathname = window.location.pathname + window.location.search;
-
-    // If not https OR not www
-    if (protocol !== 'https:' || host === 'syistgroup.onrender.com') {
-      window.location.href = 'https://www.syistgroup.onrender.com' + pathname;
-    }
-  })();
+  if (window.location.hostname === "syistgroup.onrender.com") {
+    window.location.href = "https://www.syistgroup.onrender.com" + window.location.pathname;
+  }
    </script>
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
