@@ -1,7 +1,8 @@
-<!doctype html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  
+  <meta charset="UTF-8" />
+    
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7J5BC4G8E6"></script>
 <script>
@@ -11,209 +12,535 @@
 
   gtag('config', 'G-7J5BC4G8E6');
 </script>
-  <meta charset="utf-8">
-  <title>Syist Group | Python & Programming Hub</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Syist Group | Learn Coding, AI, ML, DL in Hindi</title>
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Syist Group is your go-to place for learning Python, coding, programming tutorials, and more. Join the best coding community.">
-  <meta name="keywords" content="syist, syist group, python, coding, programming, codewithharry, tutorials, flask, django, machine learning, learn python, AI">
-  <meta name="author" content="Syist Group">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://syistgroup.onrender.com/">
+  <!-- ✅ Meta Description & Keywords -->
+  <meta name="description" content="Syist Group – Learn Python, AI, Machine Learning, Deep Learning, Web Development, and Real Projects in Hindi. India's leading coding platform for beginners to advanced.">
+  <meta name="keywords" content="syist, syist group, python, coding, projects, trading, AI, ML, DL, web development, SEO, cricket, India, news, program, coder, programming in Hindi, cyst, cist, syist group project, tech tutorials, coding platform, learn to code, tech news india, stock market">
 
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Syist Group | Python & Programming Hub">
-  <meta property="og:description" content="Learn Python, coding, and programming with Syist Group - the best online resource for developers.">
-  <meta property="og:url" content="https://syistgroup.onrender.com/">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://syistgroup.onrender.com/static/logo.png">
+  <!-- ✅ Robots & Canonical -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://syistgroup.onrender.com/" />
 
-  <!-- Twitter Card Meta -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Syist Group | Python & Programming Hub">
-  <meta name="twitter:description" content="Learn Python, coding, and programming with Syist Group - the best online resource for developers.">
-  <meta name="twitter:image" content="https://syistgroup.onrender.com/static/logo.png">
-  <meta name="twitter:site" content="@syistgroup">
+  <!-- ✅ Open Graph (Facebook) -->
+  <meta property="og:title" content="Syist Group | Learn Coding in Hindi" />
+  <meta property="og:description" content="Join Syist Group – Learn coding, AI, ML, DL, and trading in Hindi with live projects." />
+  <meta property="og:image" content="/static/logo.png" />
+  <meta property="og:url" content="https://syistgroup.onrender.com/" />
+  <meta property="og:type" content="website" />
 
-  <!-- Icons -->
-  <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+  <!-- ✅ Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Syist Group | Learn Coding in Hindi" />
+  <meta name="twitter:description" content="Join Syist Group – Learn coding, AI, ML, DL, and trading in Hindi with live projects." />
+  <meta name="twitter:image" content="/static/logo.png" />
 
+  <!-- ✅ Favicon + Apple Touch Icon -->
+  <link rel="icon" type="image/png" href="/static/apple.png" />
+  <link rel="apple-touch-icon" href="/static/apple.png" sizes="180x180" />
+
+  <!-- ✅ PWA Manifest -->
+  <link rel="manifest" href="/static/manifest.json" />
+
+  <!-- ✅ Theme for Mobile Address Bar -->
+  <meta name="theme-color" content="#0d0d0d" />
+
+</head>
   <!-- Styles -->
-  <link rel="stylesheet" href="/static/css/main.css">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #f3f6fb; color: #222; }
+
     header {
       background: #1e1e2f;
       color: white;
-      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
+      padding: 15px 20px;
       align-items: center;
-      position: relative;
     }
-    .menu-toggle {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-      color: white;
-    }
+
+    .logo { font-size: 22px; font-weight: bold; }
+
     nav {
       display: flex;
       gap: 15px;
     }
+
     nav a {
       color: white;
       text-decoration: none;
+      font-size: 15px;
     }
-    main {
-      max-width: 960px;
-      margin: auto;
-      padding: 20px;
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
     }
-    section {
-      background: #fff;
-      margin: 20px 0;
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      color: #d0f0ff; /* Bright Silver Blue */
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .hero p {
+      color: #e3f4ff;
+      font-size: 20px;
+      margin: 10px auto;
+      max-width: 700px;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    .btn-primary {
+      margin-top: 20px;
+      background: #ff5722;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #1e1e2f;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: white;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
     }
-    h2 {
-      color: #1e1e2f;
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.2);
     }
-    a {
-      color: #007bff;
+
+    .project-card h3 {
+      color: #0052cc;
+      margin-bottom: 10px;
     }
-    footer {
-      background: #1e1e2f;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
+
+    .project-card p {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #333;
     }
-    footer a {
-      color: #ccc;
-      text-decoration: none;
-      margin: 0 8px;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
+
     @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
+      .menu-toggle { display: block; }
       nav {
         display: none;
         flex-direction: column;
-        background-color: #1e1e2f;
+        background: #1e1e2f;
         position: absolute;
-        top: 70px;
+        top: 60px;
         right: 0;
         width: 100%;
-        padding: 10px 0;
         text-align: center;
-        z-index: 999;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       }
-      nav.show {
-        display: flex;
+      nav.show { display: flex; }
+      nav a { padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.1); }
+    }
+    .review-section {
+  background: #f5faff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.review-title {
+  font-size: 2rem;
+  color: #005f99;
+  margin-bottom: 30px;
+}
+
+.reviews {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.review-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+}
+
+.review-card p {
+  font-style: italic;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.review-card h4 {
+  color: #007acc;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+.show-more-btn {
+  margin-top: 30px;
+  padding: 10px 25px;
+  font-size: 1rem;
+  background: #007acc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.show-more-btn:hover {
+  background: #005f99;
+}
+.site-footer {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #dcdcdc;
+  padding: 60px 20px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-about, .footer-links, .footer-social {
+  flex: 1 1 250px;
+}
+
+.footer-about h2 {
+  color: #61dafb;
+  font-size: 28px;
+}
+
+.footer-about p {
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.footer-links h3,
+.footer-social h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li a {
+  color: #dcdcdc;
+  text-decoration: none;
+  line-height: 2;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #61dafb;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #dcdcdc;
+  font-size: 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #61dafb;
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 14px;
+  color: #aaa;
+}
+    .page-reference-section {
+      background: #f2f6fc;
+      padding: 10px 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .reference-slider {
+      display: flex;
+      width: max-content;
+      animation: scrollReference 40s linear infinite;
+    }
+
+    .reference-track {
+      display: flex;
+      gap: 50px;
+    }
+
+    .reference-item {
+      display: inline-block;
+      font-size: 18px;
+      color: #005eff;
+      background-color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 0.3s ease;
+    }
+
+    .reference-item:hover {
+      transform: scale(1.1);
+      background: #e6f0ff;
+    }
+
+    @keyframes scrollReference {
+      0% {
+        transform: translateX(0%);
       }
-      nav a {
-        padding: 12px 20px;
-        font-size: 18px;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-      }
-      nav a:hover {
-        background: #333;
+      100% {
+        transform: translateX(-50%);
       }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1><strong>Syist Group</strong> – Python & Programming Learning Platform</h1>
+    <div class="logo">Syist Group</div>
     <div class="menu-toggle">&#9776;</div>
     <nav>
-      <a href="/Project">Python Projects</a>
-      <a href="#development">वेब विकास</a>
-      <a href="#tutorials">Coding ट्यूटोरियल</a>
-      <a href="Py.html">General Real World Projects</a>
-      <a href="#seo">SEO सुधार</a>
-      <a href="#contact">संपर्क करें</a>
+      <a href="/">Home</a>
+      <a href="/python">Python</a>
+      <a href="/ml">ML</a>
+      <a href="/dl">DL</a>
+      <a href="#projects">Projects</a>
     </nav>
   </header>
 
-  <main>
-    <section>
-      <h2>Welcome to <strong>Syist Group</strong></h2>
-      <p><strong>Syist Group</strong> is a modern Python & Programming hub where developers and learners grow together. Whether you're a beginner or an experienced programmer, our tutorials, projects, and coding insights help you sharpen your skills. Learn Python, Django, Flask, JavaScript, and machine learning through our structured and interactive platform. Join the best Hindi-based coding community and take your programming career to the next level.</p>
-    </section>
+  <div class="hero">
+    <h1>Learn Coding in Hindi – Syist Group</h1>
+    <p>Step-by-step Python, AI, and Web Development courses with real projects – भारत का सबसे अच्छा कोडिंग प्लेटफ़ॉर्म</p>
+    <a href="/signup" class="btn-primary">Start Learning</a>
+  </div>
 
-    <section id="python">
-      <h2>Python प्रोग्रामिंग</h2>
-      <p><strong>Python</strong> एक शक्तिशाली, सरल और लोकप्रिय प्रोग्रामिंग भाषा है। इसकी मदद से आप वेब ऐप्स, ऑटोमेशन टूल्स, डेटा साइंस प्रोजेक्ट्स और AI सिस्टम बना सकते हैं। Syist Group Python प्रोग्रामिंग को हिंदी में सरल उदाहरणों के साथ सिखाता है ताकि कोई भी आसानी से सीख सके।</p>
-      <p>Python सीखने के लिए आप <a href="https://www.python.org" target="_blank" rel="noopener noreferrer">Python.org</a> पर भी जा सकते हैं।</p>
-    </section>
+  <section class="section" id="projects">
+    <h2>Our Projects</h2>
+    <div class="project-grid">
 
-    <section id="development">
-      <h2>वेब विकास</h2>
-      <p>हम <strong>HTML, CSS, JavaScript, Django, Flask</strong>, React और Node.js जैसी तकनीकों के साथ वेबसाइट और वेब ऐप बनाते हैं। हमारा मकसद है बिज़नेस को ऑनलाइन बढ़ाना और उपयोगकर्ता अनुभव को बेहतरीन बनाना।</p>
-    </section>
+      <div class="project-card">
+        <h3>Rojgar Setu – Job Connectivity App</h3>
+        <p>Rojgar Setu एक भारत-स्तरीय जॉब प्लेटफॉर्म है जो श्रमिकों और नियोक्ताओं को जोड़ता है। यूज़र्स जॉब पोस्ट कर सकते हैं, प्रोफ़ाइल बना सकते हैं, और स्थान के अनुसार रोजगार खोज सकते हैं। Django backend और SQLite के साथ बनाया गया है, साथ ही मोबाइल यूजर के लिए फास्ट UI भी तैयार किया गया है। इसका लक्ष्य लाखों अनस्किल्ड और सेमी-स्किल्ड वर्कर्स को डिजिटल रूप से empower करना है।</p>
+      </div>
 
-    <section id="tutorials">
-      <h2>Coding ट्यूटोरियल्स</h2>
-      <p>हमने beginner से advanced तक <strong>Python, Django, Flask, Git, REST APIs, JavaScript</strong> और SQL पर हिंदी में ट्यूटोरियल बनाए हैं। हर टॉपिक step-by-step और project-based होता है।</p>
-    </section>
+      <div class="project-card">
+        <h3>Resume Builder using Flask</h3>
+        <p>यह प्रोजेक्ट एक automated resume generator है जो यूज़र से input लेकर predefined templates में PDF बनाता है। Flask backend और HTML templates के साथ develop किया गया यह tool नौजवानों को इंटरव्यू के लिए instantly resume बनाने में मदद करता है। इसमें login/signup, multiple template choice और preview सिस्टम शामिल हैं।</p>
+      </div>
 
-    <section id="projects">
-      <h2>प्रैक्टिकल प्रोजेक्ट्स</h2>
+      <div class="project-card">
+        <h3>Chat Application (WhatsApp Clone)</h3>
+        <p>यह real-time chat application Flask और WebSockets का उपयोग करता है। इसमें user authentication, profile image, message timestamp, और call/attachment जैसे फ़ीचर उपलब्ध हैं। UI को WhatsApp जैसा रखा गया है लेकिन इसे fully responsive बनाया गया है ताकि सभी devices पर काम करे। SQLite इसका backend database है।</p>
+      </div>
+
+      <div class="project-card">
+        <h3>E-commerce Website</h3>
+        <p>यह एक पूर्णतः कार्यशील shopping platform है जहाँ उपयोगकर्ता product देख सकते हैं, cart में जोड़ सकते हैं, और खरीद सकते हैं। Flask और SQLite3 पर बना यह सिस्टम backend admin panel और payment gateway integration के साथ तैयार किया गया है। इसमें responsive UI और dynamic routing system भी शामिल हैं।</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Weather App (JavaScript)</h3>
+        <p>यह एक सरल लेकिन प्रभावी मौसम एप्लिकेशन है जो OpenWeatherMap API से लाइव डेटा लाता है। User अपने शहर का नाम डालकर तुरंत temperature, humidity और weather condition देख सकता है। Pure JavaScript, HTML और CSS का उपयोग करके बना यह app beginner के लिए best प्रोजेक्ट है।</p>
+      </div>
+
+      <div class="project-card">
+        <h3>AI-Powered Code Explainer</h3>
+        <p>यह टूल किसी भी Python code को natural language में explain करता है। इसमें OpenAI API के माध्यम से AI का प्रयोग किया गया है। उपयोगकर्ता अपना code डालता है और हिंदी में explanation प्राप्त करता है। इसका उपयोग students और developers debug और learning के लिए करते हैं।</p>
+      </div>
+
+    </div>
+  </section>
+<section class="review-section">
+  <h2 class="review-title">What Our Learners Say</h2>
+  <div class="reviews" id="reviewContainer">
+    <div class="review-card">
+      <p>"SyistGroup helped me master Python easily. Their structured content is a blessing!"</p>
+      <h4>- Aayush Raj</h4>
+    </div>
+    <div class="review-card">
+      <p>"I landed an internship after following the projects. Truly industry-ready resources."</p>
+      <h4>- Sneha Sharma</h4>
+    </div>
+    <div class="review-card">
+      <p>"Best platform for self-learners. Clean UI, detailed explanations, and real-world projects."</p>
+      <h4>- Kunal Joshi</h4>
+    </div>
+    <div class="review-card">
+      <p>"Their ML & DL sections are incredible. I built my own AI model after following their guide."</p>
+      <h4>- Meera Verma</h4>
+    </div>
+    <div class="review-card hidden">
+      <p>"I built a portfolio and got freelance work. All credit goes to the SyistGroup tutorials."</p>
+      <h4>- Rajeev Thakur</h4>
+    </div>
+    <div class="review-card hidden">
+      <p>"I was a beginner. Now I can build full-stack apps confidently. Thanks to this website!"</p>
+      <h4>- Neha Kulkarni</h4>
+    </div>
+    <div class="review-card hidden">
+      <p>"The content quality is better than paid platforms. And it’s all free."</p>
+      <h4>- Ankit Kumar</h4>
+    </div>
+    <div class="review-card hidden">
+      <p>"Their explanation is simple, examples are practical. Learned React & Django from here."</p>
+      <h4>- Sanya Mehra</h4>
+    </div>
+    <div class="review-card hidden">
+      <p>"I improved my resume using their Resume Maker project. Very practical!"</p>
+      <h4>- Harsh Vardhan</h4>
+    </div>
+    <div class="review-card hidden">
+      <p>"Thanks to SyistGroup, I cracked interviews by showcasing projects from this site."</p>
+      <h4>- Jyoti Patel</h4>
+    </div>
+    <div class="review-card hidden">
+      <p>"Even complex topics like Data Structures were made easy through their tutorials."</p>
+      <h4>- Arjun Rana</h4>
+    </div>
+    <div class="review-card hidden">
+      <p>"This site is a goldmine for learners. Thank you for the amazing content."</p>
+      <h4>- Pratiksha Reddy</h4>
+    </div>
+  </div>
+  <button class="show-more-btn" onclick="showMoreReviews()">Show More Reviews</button>
+  
+  <section class="page-reference-section">
+    <div class="reference-slider">
+      <div class="reference-track">
+        <a href="/trading.html" class="reference-item">📚 Learn Trading – Beginner to Pro</a>
+        <a href="/today-in-bharat.html" class="reference-item">🇮🇳 Today in Bharat – Latest News</a>
+        <a href="/python-course.html" class="reference-item">🚀 Start with Python in 30 Days</a>
+        <a href="/cpp-career.html" class="reference-item">💼 Career with C++ & Projects</a>
+        <a href="/cyber-security.html" class="reference-item">🔐 Cyber Security for Beginners</a>
+        <a href="/deep-learning.html" class="reference-item">🧠 Introduction to Deep Learning</a>
+        <a href="/create-website.html" class="reference-item">🌐 Create a Website using HTML/CSS</a>
+        <a href="/ai-in-life.html" class="reference-item">🤖 AI in Daily Life Explained</a>
+        <a href="/stock-predictor.html" class="reference-item">📊 Stock Market Prediction Project</a>
+        <a href="/game-js.html" class="reference-item">🎮 Game Development with JS</a>
+        <a href="/react-native-app.html" class="reference-item">📱 Android App with React Native</a>
+        <a href="/git-github.html" class="reference-item">⚙️ How Git & GitHub Works</a>
+        <a href="/seo-2025.html" class="reference-item">🔎 SEO in 2025 – Latest Trends</a>
+        <a href="/resume-ai.html" class="reference-item">📑 Resume Builder AI</a>
+        <a href="/projects-directory.html" class="reference-item">🧭 Explore Our Projects Directory</a>
+      </div>
+
+      <!-- Duplicate track for seamless loop -->
+      <div class="reference-track">
+        <a href="/trading.html" class="reference-item">📚 Learn Trading – Beginner to Pro</a>
+        <a href="/today-in-bharat.html" class="reference-item">🇮🇳 Today in Bharat – Latest News</a>
+        <a href="/python-course.html" class="reference-item">🚀 Start with Python in 30 Days</a>
+        <a href="/cpp-career.html" class="reference-item">💼 Career with C++ & Projects</a>
+        <a href="/cyber-security.html" class="reference-item">🔐 Cyber Security for Beginners</a>
+        <a href="/deep-learning.html" class="reference-item">🧠 Introduction to Deep Learning</a>
+        <a href="/create-website.html" class="reference-item">🌐 Create a Website using HTML/CSS</a>
+        <a href="/ai-in-life.html" class="reference-item">🤖 AI in Daily Life Explained</a>
+        <a href="/stock-predictor.html" class="reference-item">📊 Stock Market Prediction Project</a>
+        <a href="/game-js.html" class="reference-item">🎮 Game Development with JS</a>
+        <a href="/react-native-app.html" class="reference-item">📱 Android App with React Native</a>
+        <a href="/git-github.html" class="reference-item">⚙️ How Git & GitHub Works</a>
+        <a href="/seo-2025.html" class="reference-item">🔎 SEO in 2025 – Latest Trends</a>
+        <a href="/resume-ai.html" class="reference-item">📑 Resume Builder AI</a>
+        <a href="/projects-directory.html" class="reference-item">🧭 Explore Our Projects Directory</a>
+      </div>
+    </div>
+  </section>
+  
+</section>
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-about">
+      <h2>SyistGroup</h2>
+      <p>Empowering coders with practical knowledge and real-world projects. Learn, build, and grow your career with us.</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
       <ul>
-        <li><a href="/projects/chatbot">Python आधारित Chatbot</a></li>
-        <li><a href="/projects/ecommerce">Django E-commerce Web App</a></li>
-        <li><a href="/projects/resume-builder">Flask से Resume Builder</a></li>
-        <li><a href="/projects/weather">JavaScript Weather App</a></li>
-        <li><a href="/projects/rojgar-setu">Rojgar Setu – जॉब कनेक्टिविटी प्लेटफॉर्म</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/help">Help Center</a></li>
+        <li><a href="/trading">Trading</a></li>
       </ul>
-    </section>
+    </div>
 
-    <section id="seo">
-      <h2>SEO सुधार सूची</h2>
-      <ul>
-        <li><strong>Meta Title & Description</strong> पूरी तरह Optimized की गई</li>
-        <li>Primary Keywords: python, python programming, syist group, coding tutorial, programming</li>
-        <li>Responsive Design: Mobile-friendly layout with Hamburger Menu</li>
-        <li>Semantic Tags (header, nav, section, footer) का उपयोग किया गया</li>
-        <li>Internal Linking सभी anchor href के साथ किया गया</li>
-        <li>Open Graph और Twitter Meta Cards जोड़े गए</li>
-        <li>1000+ शब्दों का SEO-rich content जोड़ा गया</li>
-        <li>Navigation को JavaScript द्वारा interactive बनाया गया</li>
-      </ul>
-    </section>
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
 
-    <section id="contact">
-      <h2>संपर्क करें</h2>
-      <p>ईमेल: <a href="mailto:contact@syistgroup.com">contact@syistgroup.com</a></p>
-      <p>फोन: +91 9699539334</p>
-      <p>पता: दिल्ली, भारत</p>
-    </section>
-    <a href="/mobile" style="display: inline-block; padding: 12px 24px; background-color: #ff5722; color: white; font-size: 16px; border: none; border-radius: 8px; text-decoration: none; font-family: Arial, sans-serif;">
-  Mobile Kho Gaya Ye Kare
-</a>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Syist Group | Python | Coding | Web Development</p>
-    <p>
-      <a href="https://facebook.com/syistgroup" target="_blank" rel="noopener noreferrer">Facebook</a> |
-      <a href="https://twitter.com/syistgroup" target="_blank" rel="noopener noreferrer">Twitter</a> |
-      <a href="https://instagram.com/syistgroup" target="_blank" rel="noopener noreferrer">Instagram</a>
-    </p>
-  </footer>
-
+  <div class="footer-bottom">
+    <p>&copy; 2025 SyistGroup. All rights reserved. | Designed with ❤️ by Syist Team</p>
+  </div>
+</footer>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const toggle = document.querySelector(".menu-toggle");
@@ -222,6 +549,14 @@
         nav.classList.toggle("show");
       });
     });
+    
+  function showMoreReviews() {
+    const hiddenReviews = document.querySelectorAll('.review-card.hidden');
+    hiddenReviews.forEach(card => card.classList.remove('hidden'));
+    document.querySelector('.show-more-btn').style.display = 'none';
+  }
+
   </script>
+
 </body>
 </html>
