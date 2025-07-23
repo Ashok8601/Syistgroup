@@ -1,4 +1,186 @@
-girg
-nlllggb
-brdhh
-bkkgn
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Understand the core concepts of Deep Learning, its real-world applications, and frequently asked questions.">
+  <meta name="keywords" content="Deep Learning, Neural Networks, AI, Machine Learning, Deep Learning FAQs, Artificial Intelligence">
+  <meta name="author" content="Ashok Kumar" />
+  <title>Deep Learning – Concepts, Applications & FAQs</title>
+  <link rel="canonical" href="https://syistgroup.onrender.com/dl/" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      color: #333;
+    }
+    header {
+      background: #0b3d91;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.2rem;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #d0d0d0;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+    section {
+      margin-bottom: 2rem;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    h2 {
+      color: #0b3d91;
+      border-bottom: 2px solid #0b3d91;
+      padding-bottom: 0.5rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    .faq {
+      margin-top: 1.5rem;
+    }
+    .faq-item {
+      background: #f0f8ff;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .faq-item:hover {
+      background: #e0f0ff;
+    }
+    .question {
+      font-weight: bold;
+    }
+    .answer {
+      display: none;
+      margin-top: 0.5rem;
+    }
+    .faq-item.active .answer {
+      display: block;
+    }
+    footer {
+      text-align: center;
+      background: #eee;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".faq-item").forEach(item => {
+        item.addEventListener("click", () => {
+          item.classList.toggle("active");
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>Deep Learning</h1>
+    <p>Explore the future of Artificial Intelligence and Machine Learning</p>
+  </header>
+
+  <div class="container">
+
+    <section>
+      <h2>What is Deep Learning?</h2>
+      <p>Deep learning is a subfield of machine learning that uses algorithms inspired by the structure and function of the brain's neural networks. It is primarily used for supervised learning tasks, such as image recognition, speech recognition, natural language processing, and more.</p>
+    </section>
+
+    <section>
+      <h2>Applications of Deep Learning</h2>
+      <ul>
+        <li>Self-driving cars (Autonomous Vehicles)</li>
+        <li>Face Recognition & Biometrics</li>
+        <li>Voice Assistants (e.g., Alexa, Siri)</li>
+        <li>Medical Diagnosis (e.g., cancer detection from X-rays)</li>
+        <li>Language Translation (e.g., Google Translate)</li>
+        <li>Fraud Detection in Finance</li>
+      </ul>
+    </section>
+
+    <section class="faq">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+
+      <div class="faq-item">
+        <div class="question">1. What is the difference between AI, ML, and DL?</div>
+        <div class="answer">AI is the broader concept. Machine Learning (ML) is a subset of AI. Deep Learning (DL) is a subset of ML that uses neural networks with many layers.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="question">2. What are neural networks?</div>
+        <div class="answer">Neural networks are algorithms modeled after the human brain that are designed to recognize patterns and solve complex problems.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="question">3. What is a deep neural network?</div>
+        <div class="answer">A deep neural network is a neural network with multiple hidden layers, allowing it to learn complex features from data.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="question">4. Which languages are used in Deep Learning?</div>
+        <div class="answer">Primarily Python is used, along with libraries like TensorFlow, PyTorch, and Keras.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="question">5. What are common deep learning frameworks?</div>
+        <div class="answer">Popular frameworks include TensorFlow, PyTorch, Keras, and Theano.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="question">6. What hardware is needed for deep learning?</div>
+        <div class="answer">GPUs (Graphics Processing Units) are highly recommended for training deep learning models faster.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="question">7. Can I learn deep learning without coding?</div>
+        <div class="answer">Basic coding is necessary, especially Python. However, platforms like Teachable Machine can help beginners experiment without coding.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="question">8. What is the role of activation functions?</div>
+        <div class="answer">Activation functions introduce non-linearity into neural networks, helping them learn complex patterns.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="question">9. What is overfitting in deep learning?</div>
+        <div class="answer">Overfitting occurs when a model learns the training data too well, including its noise, and performs poorly on new data.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="question">10. Is deep learning used in ChatGPT?</div>
+        <div class="answer">Yes. ChatGPT is based on large-scale deep learning models known as transformer architectures (like GPT-4).</div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    &copy; 2025 Ashok Kumar | Deep Learning Insights
+  </footer>
+
+</body>
+</html>
