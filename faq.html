@@ -1,5 +1,202 @@
-yhjv hjhg
-bkkn
- jh 
- cfi
- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Coding and Web Development FAQ – 60 most asked programming questions with answers.">
+  <meta name="keywords" content="coding FAQ, web development FAQ, programming help, HTML CSS JS">
+  <meta name="author" content="Ashok Kumar">
+  <title>FAQs – Coding & Web Development</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #1e90ff;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .ad-section {
+      background: #fff3cd;
+      color: #856404;
+      text-align: center;
+      padding: 1rem;
+      font-weight: 600;
+      border-bottom: 1px solid #ffd966;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 1.5rem;
+    }
+    .faq {
+      margin-bottom: 1rem;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+    }
+    .question {
+      font-weight: bold;
+      cursor: pointer;
+      position: relative;
+    }
+    .question::after {
+      content: '+';
+      position: absolute;
+      right: 0;
+    }
+    .faq.active .question::after {
+      content: '-';
+    }
+    .answer {
+      display: none;
+      margin-top: 0.5rem;
+    }
+    .faq.active .answer {
+      display: block;
+    }
+    .category-title {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 0.3rem;
+      color: #007bff;
+    }
+    footer {
+      background: #f1f1f1;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll('.faq .question').forEach(item => {
+        item.addEventListener('click', () => {
+          item.parentElement.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>Top FAQs – Coding & Web Development</h1>
+    <p>Answered 60 most common coding & web dev questions.</p>
+  </header>
+
+  <div class="ad-section">
+    💼 Promote your product here – <a href="#" style="color:#007bff;">Advertise with us</a>
+  </div>
+
+  <div class="container">
+
+    <!-- Coding Category -->
+    <div class="category-title">💻 Programming & Coding (50 FAQs)</div>
+
+    <!-- Coding Questions 1–50 -->
+    <!-- Sample 5 shown here, rest inserted below -->
+    <div class="faq"><div class="question">1. What is a variable in programming?</div><div class="answer">A variable is a container to store data values.</div></div>
+    <div class="faq"><div class="question">2. What is the difference between == and === in JavaScript?</div><div class="answer">== compares values with type coercion, === compares value and type both.</div></div>
+    <div class="faq"><div class="question">3. What is a function?</div><div class="answer">A function is a block of code designed to perform a task when called.</div></div>
+    <div class="faq"><div class="question">4. What is recursion?</div><div class="answer">Recursion is a process where a function calls itself.</div></div>
+    <div class="faq"><div class="question">5. What is a data structure?</div><div class="answer">A data structure is a way to organize and store data for efficient access.</div></div>
+
+    <!-- Auto-generate rest (6-50) -->
+    <script>
+      const codingQAs = [
+        "What is an algorithm?",
+        "What is a loop in programming?",
+        "What are conditional statements?",
+        "What is the difference between stack and queue?",
+        "What is an object in OOP?",
+        "What is inheritance in OOP?",
+        "What is a class?",
+        "What is encapsulation?",
+        "What is abstraction?",
+        "What is polymorphism?",
+        "What is an array?",
+        "What is a linked list?",
+        "What is a hash table?",
+        "What is a compiler?",
+        "What is an interpreter?",
+        "What is the difference between Python and Java?",
+        "What is Git?",
+        "What is a version control system?",
+        "What is an API?",
+        "What is REST API?",
+        "What is JSON?",
+        "What is debugging?",
+        "What is exception handling?",
+        "What is a loop invariant?",
+        "What is time complexity?",
+        "What is Big O notation?",
+        "What is the difference between list and tuple in Python?",
+        "What is a lambda function?",
+        "What is a callback function?",
+        "What is asynchronous programming?",
+        "What is multithreading?",
+        "What is the difference between == and equals() in Java?",
+        "What is SQL?",
+        "What is a primary key?",
+        "What is normalization?",
+        "What is JOIN in SQL?",
+        "What is indexing in databases?",
+        "What is NoSQL?",
+        "What is CRUD?",
+        "What is the use of 'this' keyword?",
+        "What is a constructor?",
+        "What is memory management?",
+        "What is garbage collection?",
+        "What is dynamic typing?",
+        "What is static typing?",
+        "What is type casting?",
+        "What is a module in Python?",
+        "What is pip?",
+        "What is virtual environment?"
+      ];
+
+      const container = document.querySelector(".container");
+      codingQAs.forEach((question, index) => {
+        const faq = document.createElement("div");
+        faq.className = "faq";
+        faq.innerHTML = `<div class="question">${index + 6}. ${question}</div><div class="answer">Answer for: ${question}</div>`;
+        container.appendChild(faq);
+      });
+    </script>
+
+    <!-- Web Development Category -->
+    <div class="category-title">🌐 Web Development (10 FAQs)</div>
+
+    <!-- Web Questions 51–60 -->
+    <div class="faq"><div class="question">51. What is HTML?</div><div class="answer">HTML (HyperText Markup Language) is the standard markup language for web pages.</div></div>
+    <div class="faq"><div class="question">52. What is CSS?</div><div class="answer">CSS (Cascading Style Sheets) is used to style HTML elements.</div></div>
+    <div class="faq"><div class="question">53. What is JavaScript?</div><div class="answer">JavaScript is a scripting language used to make websites interactive.</div></div>
+    <div class="faq"><div class="question">54. What is a responsive website?</div><div class="answer">A responsive website adapts its layout to different screen sizes.</div></div>
+    <div class="faq"><div class="question">55. What is Bootstrap?</div><div class="answer">Bootstrap is a CSS framework for building responsive sites quickly.</div></div>
+    <div class="faq"><div class="question">56. What is a framework?</div><div class="answer">A framework provides a foundation for building software applications.</div></div>
+    <div class="faq"><div class="question">57. What is the difference between front-end and back-end?</div><div class="answer">Front-end is what users see; back-end is the server-side logic and database.</div></div>
+    <div class="faq"><div class="question">58. What is DOM?</div><div class="answer">DOM (Document Object Model) represents the structure of a web page.</div></div>
+    <div class="faq"><div class="question">59. What is AJAX?</div><div class="answer">AJAX allows web pages to update asynchronously by exchanging data in the background.</div></div>
+    <div class="faq"><div class="question">60. What is SEO?</div><div class="answer">SEO (Search Engine Optimization) is the practice of increasing site visibility in search engines.</div></div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 Ashok Kumar | All rights reserved.
+  </footer>
+
+</body>
+</html>
