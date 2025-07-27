@@ -117,6 +117,37 @@
       color: #000;
       text-decoration: underline;
     }
+/* Mobile devices (max-width: 600px) */
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 16px;
+    background-color: #f0f0f0;
+  }
+
+  .container {
+    padding: 10px;
+    flex-direction: column;
+  }
+}
+
+/* Tablets (min-width: 601px) and (max-width: 1024px) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  body {
+    font-size: 17px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+}
+
+/* Large screens (min-width: 1025px) */
+@media screen and (min-width: 1025px) {
+  .container {
+    max-width: 1200px;
+    margin: auto;
+  }
+}
   </style>
 </head>
 <body>
