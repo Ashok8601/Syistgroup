@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+   <meta name="description" content="Explore a complete interactive list of NumPy methods with examples and explanations. Learn NumPy for data science, machine learning, and scientific computing.">
+
+  
+  <meta name="keywords" content="NumPy in Python, NumPy methods list, NumPy tutorial, NumPy array creation, NumPy mathematical functions, NumPy for data science, NumPy random module, NumPy statistics functions, learn NumPy Python, NumPy examples, NumPy guide, NumPy cheat sheet, NumPy documentation simplified, NumPy interactive tool, NumPy array operations, NumPy for machine learning, NumPy full course, NumPy complete reference, Python array manipulation, NumPy explained for beginners">
+
+  
+  <link rel="canonical" href="https://syistgroup.onrender.com/numpy">
+
+  
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="NumPy Methods in Python - Interactive Guide | Syist Group" />
+  <meta property="og:description" content="Browse all NumPy methods with code examples. Learn how to use NumPy for Python programming, machine learning, and data analysis." />
+  <meta property="og:url" content="https://syistgroup.onrender.com/numpy" />
+  <meta property="og:site_name" content="Syist Group" />
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg" />
+
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NumPy Methods in Python - Interactive Guide" />
+  <meta name="twitter:description" content="Master NumPy with this interactive cheat sheet covering all essential functions." />
+  <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Learn All Methods of Numpy For Data Science Machin Learning</title>
+  
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f4f8;
+  padding: 0;
+  color: #333;
+}
+
+/* HEADER STYLING */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #212121;
+  color: #fff;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+nav {
+  display: flex;
+  gap: 1.2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+nav a:hover {
+  background: #333;
+}
+
+/* MOBILE NAV */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+}
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: #333;
+  padding: 1rem;
+  position: absolute;
+  right: 1rem;
+  top: 70px;
+  z-index: 10;
+  border-radius: 5px;
+}
+
+.mobile-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 0.8rem;
+}
+
+/* HERO SECTION */
+.hero {
+  padding: 3rem 1rem;
+  text-align: center;
+  background: linear-gradient(to right, #0077b6, #00b4d8);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.3rem;
+}
+
+/* CONTENT HEADINGS */
+h1, h2 {
+  color: #1d3557;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+/* METHOD SECTION */
+.method {
+  background: #e1ecf4;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-left: 5px solid #457b9d;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-weight: 500;
+}
+
+.method:hover {
+  background: #d1e7f7;
+}
+
+.details {
+  display: none;
+  background: #ffffff;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-left: 5px solid #6c757d;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  line-height: 1.4;
+}
+
+pre {
+  background: #f8f9fa;
+  padding: 10px;
+  overflow-x: auto;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+/* Footer Styles */
+footer {
+  background: #212121;
+  color: #fff;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-content > div {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-content h3 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #00b4d8;
+}
+
+.footer-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-content ul li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-content ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.footer-content ul li a:hover {
+  color: #00b4d8;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1rem 0 0 0;
+  background: #1a1a1a;
+  font-size: 0.85rem;
+  color: #999;
+  user-select: none;
+  margin-top: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+.faq-section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.faq-section h2 {
+  text-align: center;
+  color: #1d3557;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.faq-question {
+  width: 100%;
+  background: #457b9d;
+  color: white;
+  cursor: pointer;
+  padding: 15px 20px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 6px 6px 0 0;
+  transition: background 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.faq-question:hover {
+  background: #1d3557;
+}
+
+.faq-answer {
+  display: none;
+  padding: 15px 20px;
+  background: white;
+  font-size: 1rem;
+  color: #333;
+  border-radius: 0 0 6px 6px;
+  line-height: 1.5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media (max-width: 600px) {
+  .faq-question {
+    font-size: 1rem;
+    padding: 12px 15px;
+  }
+
+  .faq-answer {
+    font-size: 0.9rem;
+    padding: 12px 15px;
+  }
+}
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is NumPy used for in Python?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NumPy is used for numerical computing in Python, providing support for arrays, matrices, and mathematical functions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to create arrays using NumPy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can create arrays using np.array(), np.zeros(), np.ones(), np.arange(), and other array creation functions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the basic mathematical functions in NumPy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Basic mathematical functions include np.add(), np.subtract(), np.multiply(), np.divide(), np.sqrt(), np.power(), and more."
+      }
+    }
+    {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is NumPy used for in Python?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NumPy is used for numerical computing in Python, providing support for arrays, matrices, and mathematical functions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to create arrays using NumPy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can create arrays using np.array(), np.zeros(), np.ones(), np.arange(), and other array creation functions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the basic mathematical functions in NumPy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Basic mathematical functions include np.add(), np.subtract(), np.multiply(), np.divide(), np.sqrt(), np.power(), and more."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to generate random numbers in NumPy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can use np.random.rand(), np.random.randint(), np.random.randn(), np.random.choice() for generating random numbers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between np.zeros() and np.empty()?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "np.zeros() creates an array filled with zeros while np.empty() creates an uninitialized array with random garbage values."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to calculate mean and median in NumPy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use np.mean() to calculate mean and np.median() to calculate median of an array."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to find the index of the max value in an array?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use np.argmax() function to find the index of the maximum value in an array."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use NumPy for machine learning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, NumPy is the foundation for many machine learning libraries like Scikit-learn, TensorFlow, and PyTorch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to handle multi-dimensional arrays in NumPy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NumPy supports multi-dimensional arrays (ndarrays), which you can manipulate with slicing, reshaping, and indexing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is broadcasting in NumPy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Broadcasting allows NumPy to perform arithmetic operations on arrays of different shapes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to save and load NumPy arrays?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use np.save() and np.load() functions to save and load arrays in binary format."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are structured arrays in NumPy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Structured arrays allow heterogeneous data types in one array, useful for tabular data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to perform element-wise operations in NumPy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most arithmetic operators and functions in NumPy operate element-wise on arrays."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between np.mod() and np.remainder()?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both return the remainder after division, but np.mod() follows the sign of the divisor, np.remainder() the dividend."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to reshape an array in NumPy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the reshape() method to change the shape of an array without changing its data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is np.linspace() used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It returns evenly spaced numbers over a specified interval, useful for generating ranges with fractional steps."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to perform matrix multiplication in NumPy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use np.dot() or the @ operator for matrix multiplication."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between np.array() and np.asarray()?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "np.array() copies data by default, np.asarray() avoids copying if input is already an array."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to get the shape of an array?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the .shape attribute to get the dimensions of the array."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to flatten a multi-dimensional array?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the flatten() method to convert multi-dimensional arrays to 1D."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the purpose of np.clip()?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It limits the values in an array to a specified minimum and maximum."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to find unique elements in an array?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use np.unique() to find sorted unique elements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to sort an array?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use np.sort() function to return a sorted copy of the array."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is np.concatenate() used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It joins two or more arrays along an existing axis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to stack arrays vertically and horizontally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use np.vstack() for vertical stacking and np.hstack() for horizontal stacking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to create an identity matrix?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use np.eye() or np.identity() to create an identity matrix."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to count occurrences of elements?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use np.bincount() to count occurrences of non-negative integers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to shuffle elements in an array?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use np.random.shuffle() to shuffle an array in-place."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does np.random.seed() do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It sets the random seed for reproducibility of random numbers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to generate samples from a normal distribution?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use np.random.randn() or np.random.normal() to generate samples from a normal distribution."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are structured dtypes in NumPy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They allow defining complex data types with fields for heterogeneous data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to perform boolean indexing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can filter arrays using boolean masks, e.g., arr[arr > 5]."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to calculate covariance and correlation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use np.cov() for covariance matrix and np.corrcoef() for correlation coefficients."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the use of np.histogram()?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It computes the frequency histogram of data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to apply a function element-wise?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use np.vectorize() or simply use universal functions (ufuncs) which work element-wise."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between np.copy() and assignment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "np.copy() creates a new array with copied data, assignment only copies the reference."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to perform conditional replacement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use np.where(condition, x, y) to choose elements based on condition."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to flatten arrays with ravel()?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "np.ravel() returns a flattened view of the array if possible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between flatten() and ravel()?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "flatten() returns a copy; ravel() returns a view if possible (more memory efficient)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to get the data type of an array?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the .dtype attribute to get the data type of array elements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to change the data type of an array?",
+      "accepted
+  ]
+}
+</script>
+</head>
+<body>
+  
+  <header>
+    <div class="logo">
+      <img src="apple.png" alt="Syist Group Logo">
+      <strong>Syist Group</strong>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav>
+      <a href="/home">Home</a>
+      <a href="/about">About</a>
+      <a href="/python">Python</a>
+      <a href="/data-science">Data Science</a>
+      <a href="/ml">ML</a>
+      <a href="/dl">DL</a>
+      <a href="/bee">Business Idea</a>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+      <a href="/home">Home</a>
+      <a href="/about">About</a>
+      <a href="/python">Python</a>
+      <a href="/data-science">Data Science</a>
+      <a href="/ml">ML</a>
+      <a href="/dl">DL</a>
+      <a href="/bee">Business Idea</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1><strong>Syist Group</strong> take the responsibility to make you a successful Python Developer.</h1>
+    
+  </section>
+  </header>
+  <h1>NumPy Methods – Click to View Details</h1>
+  <h2>Array Creation</h2>
+
+<div class="method" onclick="toggle('m100')">🔹 np.array()</div>
+<div id="m100" class="details">
+  <p><strong>Create a NumPy array from a list, tuple, or nested lists.</strong></p>
+  <pre><code>import numpy as np
+a = np.array([1, 2, 3])
+print(a)</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m101')">🔹 np.zeros()</div>
+<div id="m101" class="details">
+  <p><strong>Creates an array of given shape filled with zeros.</strong></p>
+  <pre><code>import numpy as np
+z = np.zeros((2, 3))
+print(z)</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m102')">🔹 np.ones()</div>
+<div id="m102" class="details">
+  <p><strong>Creates an array filled with ones.</strong></p>
+  <pre><code>import numpy as np
+o = np.ones((3, 3))
+print(o)</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m103')">🔹 np.empty()</div>
+<div id="m103" class="details">
+  <p><strong>Creates an uninitialized array (random garbage values).</strong></p>
+  <pre><code>import numpy as np
+e = np.empty((2, 2))
+print(e)</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m104')">🔹 np.full()</div>
+<div id="m104" class="details">
+  <p><strong>Creates an array filled with a specified constant value.</strong></p>
+  <pre><code>import numpy as np
+f = np.full((2, 2), 7)
+print(f)</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m105')">🔹 np.arange()</div>
+<div id="m105" class="details">
+  <p><strong>Returns evenly spaced values within a given interval.</strong></p>
+  <pre><code>import numpy as np
+a = np.arange(0, 10, 2)
+print(a)</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m106')">🔹 np.linspace()</div>
+<div id="m106" class="details">
+  <p><strong>Returns evenly spaced numbers over a specified range.</strong></p>
+  <pre><code>import numpy as np
+l = np.linspace(0, 1, 5)
+print(l)</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m107')">🔹 np.eye()</div>
+<div id="m107" class="details">
+  <p><strong>Creates a 2-D identity matrix with ones on the diagonal.</strong></p>
+  <pre><code>import numpy as np
+i = np.eye(3)
+print(i)</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m108')">🔹 np.identity()</div>
+<div id="m108" class="details">
+  <p><strong>Creates an identity matrix of a given size (square matrix).</strong></p>
+  <pre><code>import numpy as np
+i = np.identity(4)
+print(i)</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m109')">🔹 np.fromiter()</div>
+<div id="m109" class="details">
+  <p><strong>Creates a 1-D array from any iterable (like generator or range).</strong></p>
+  <pre><code>import numpy as np
+arr = np.fromiter(range(5), dtype=int)
+print(arr)</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m110')">🔹 np.fromfunction()</div>
+<div id="m110" class="details">
+  <p><strong>Constructs an array by executing a function over each coordinate.</strong></p>
+  <pre><code>import numpy as np
+f = np.fromfunction(lambda i, j: i + j, (3, 3), dtype=int)
+print(f)</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m111')">🔹 np.asarray()</div>
+<div id="m111" class="details">
+  <p><strong>Converts input to an array (avoids copy if already a NumPy array).</strong></p>
+  <pre><code>import numpy as np
+lst = [1, 2, 3]
+arr = np.asarray(lst)
+print(arr)</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m112')">🔹 np.copy()</div>
+<div id="m112" class="details">
+  <p><strong>Creates a deep copy of an array.</strong></p>
+  <pre><code>import numpy as np
+a = np.array([1, 2, 3])
+b = np.copy(a)
+print(b)</code></pre>
+</div>
+  <h2>Mathematical Functions</h2>
+
+<div class="method" onclick="toggle('m50')">🔹 np.add()</div>
+<div id="m50" class="details">
+  <p><strong>Adds two arrays element-wise.</strong></p>
+  <pre><code>import numpy as np
+a = np.array([1, 2])
+b = np.array([3, 4])
+print(np.add(a, b))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m51')">🔹 np.subtract()</div>
+<div id="m51" class="details">
+  <p><strong>Subtracts second array from the first, element-wise.</strong></p>
+  <pre><code>import numpy as np
+a = np.array([5, 7])
+b = np.array([2, 4])
+print(np.subtract(a, b))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m52')">🔹 np.multiply()</div>
+<div id="m52" class="details">
+  <p><strong>Multiplies two arrays element-wise.</strong></p>
+  <pre><code>import numpy as np
+a = np.array([2, 3])
+b = np.array([4, 5])
+print(np.multiply(a, b))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m53')">🔹 np.divide()</div>
+<div id="m53" class="details">
+  <p><strong>Divides first array by second, element-wise.</strong></p>
+  <pre><code>import numpy as np
+a = np.array([10, 20])
+b = np.array([2, 5])
+print(np.divide(a, b))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m54')">🔹 np.power()</div>
+<div id="m54" class="details">
+  <p><strong>Raises elements of first array to powers from second array.</strong></p>
+  <pre><code>import numpy as np
+a = np.array([2, 3])
+b = np.array([3, 2])
+print(np.power(a, b))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m55')">🔹 np.sqrt()</div>
+<div id="m55" class="details">
+  <p><strong>Computes the square root of each element.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([1, 4, 9])
+print(np.sqrt(arr))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m56')">🔹 np.exp()</div>
+<div id="m56" class="details">
+  <p><strong>Calculates the exponential of all elements (e^x).</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([1, 2, 3])
+print(np.exp(arr))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m57')">🔹 np.log()</div>
+<div id="m57" class="details">
+  <p><strong>Computes the natural logarithm (ln) of all elements.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([1, np.e, np.e**2])
+print(np.log(arr))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m58')">🔹 np.log10()</div>
+<div id="m58" class="details">
+  <p><strong>Computes the base-10 logarithm of all elements.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([1, 10, 100])
+print(np.log10(arr))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m59')">🔹 np.log2()</div>
+<div id="m59" class="details">
+  <p><strong>Computes the base-2 logarithm of all elements.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([1, 2, 4, 8])
+print(np.log2(arr))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m60')">🔹 np.sin()</div>
+<div id="m60" class="details">
+  <p><strong>Computes the sine of each element (in radians).</strong></p>
+  <pre><code>import numpy as np
+angles = np.array([0, np.pi/2, np.pi])
+print(np.sin(angles))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m61')">🔹 np.cos()</div>
+<div id="m61" class="details">
+  <p><strong>Computes the cosine of each element (in radians).</strong></p>
+  <pre><code>import numpy as np
+angles = np.array([0, np.pi/2, np.pi])
+print(np.cos(angles))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m62')">🔹 np.tan()</div>
+<div id="m62" class="details">
+  <p><strong>Computes the tangent of each element (in radians).</strong></p>
+  <pre><code>import numpy as np
+angles = np.array([0, np.pi/4])
+print(np.tan(angles))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m63')">🔹 np.abs()</div>
+<div id="m63" class="details">
+  <p><strong>Computes the absolute value element-wise.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([-1, -3, 4])
+print(np.abs(arr))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m64')">🔹 np.ceil()</div>
+<div id="m64" class="details">
+  <p><strong>Rounds each element up to the nearest integer.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([1.2, 2.8])
+print(np.ceil(arr))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m65')">🔹 np.floor()</div>
+<div id="m65" class="details">
+  <p><strong>Rounds each element down to the nearest integer.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([1.9, 2.1])
+print(np.floor(arr))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m66')">🔹 np.round()</div>
+<div id="m66" class="details">
+  <p><strong>Rounds each element to the nearest integer.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([1.4, 2.5, 3.6])
+print(np.round(arr))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m67')">🔹 np.clip()</div>
+<div id="m67" class="details">
+  <p><strong>Clips (limits) values to a specified range.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([1, 5, 10, 15])
+print(np.clip(arr, 3, 10))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m68')">🔹 np.mod()</div>
+<div id="m68" class="details">
+  <p><strong>Computes the element-wise remainder of division.</strong></p>
+  <pre><code>import numpy as np
+a = np.array([5, 9])
+b = np.array([2, 4])
+print(np.mod(a, b))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m69')">🔹 np.remainder()</div>
+<div id="m69" class="details">
+  <p><strong>Same as np.mod() — returns remainder of division.</strong></p>
+  <pre><code>import numpy as np
+print(np.remainder([4, 7], [2, 3]))</code></pre>
+</div>
+ <h2>Random Module</h2>
+
+<div class="method" onclick="toggle('m30')">🔹 np.random.rand()</div>
+<div id="m30" class="details">
+  <p><strong>Generates random floats in [0, 1) with given shape.</strong></p>
+  <pre><code>import numpy as np
+print(np.random.rand(2, 2))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m31')">🔹 np.random.randint()</div>
+<div id="m31" class="details">
+  <p><strong>Generates random integers in a given range and shape.</strong></p>
+  <pre><code>import numpy as np
+print(np.random.randint(1, 10, (3, 3)))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m32')">🔹 np.random.randn()</div>
+<div id="m32" class="details">
+  <p><strong>Returns samples from the standard normal distribution.</strong></p>
+  <pre><code>import numpy as np
+print(np.random.randn(2, 3))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m33')">🔹 np.random.choice()</div>
+<div id="m33" class="details">
+  <p><strong>Selects random elements from a given array.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([10, 20, 30, 40])
+print(np.random.choice(arr, 2))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m34')">🔹 np.random.shuffle()</div>
+<div id="m34" class="details">
+  <p><strong>Shuffles the contents of an array in-place.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([1, 2, 3, 4])
+np.random.shuffle(arr)
+print(arr)</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m35')">🔹 np.random.permutation()</div>
+<div id="m35" class="details">
+  <p><strong>Returns a permuted (shuffled) version of the array.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([1, 2, 3, 4])
+print(np.random.permutation(arr))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m36')">🔹 np.random.seed()</div>
+<div id="m36" class="details">
+  <p><strong>Sets the seed for random number generation (for reproducibility).</strong></p>
+  <pre><code>import numpy as np
+np.random.seed(42)
+print(np.random.rand(2))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m37')">🔹 np.random.uniform()</div>
+<div id="m37" class="details">
+  <p><strong>Draws samples from a uniform distribution.</strong></p>
+  <pre><code>import numpy as np
+print(np.random.uniform(1, 5, size=(2, 3)))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m38')">🔹 np.random.normal()</div>
+<div id="m38" class="details">
+  <p><strong>Draws samples from a normal (Gaussian) distribution.</strong></p>
+  <pre><code>import numpy as np
+print(np.random.normal(loc=0.0, scale=1.0, size=(2, 3)))</code></pre>
+</div>
+<h2>Statistics</h2>
+
+<div class="method" onclick="toggle('m9')">🔹 np.mean()</div>
+<div id="m9" class="details">
+  <p><strong>Computes the arithmetic mean (average) of array elements.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([1, 2, 3, 4])
+print(np.mean(arr))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m10')">🔹 np.median()</div>
+<div id="m10" class="details">
+  <p><strong>Computes the median (middle value) of array elements.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([1, 3, 2, 4])
+print(np.median(arr))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m11')">🔹 np.std()</div>
+<div id="m11" class="details">
+  <p><strong>Computes the standard deviation, a measure of spread in the data.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([1, 2, 3, 4])
+print(np.std(arr))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m12')">🔹 np.var()</div>
+<div id="m12" class="details">
+  <p><strong>Computes the variance of array elements.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([1, 2, 3, 4])
+print(np.var(arr))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m13')">🔹 np.min()</div>
+<div id="m13" class="details">
+  <p><strong>Returns the minimum value in the array.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([5, 2, 9, 1])
+print(np.min(arr))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m14')">🔹 np.max()</div>
+<div id="m14" class="details">
+  <p><strong>Returns the maximum value in the array.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([5, 2, 9, 1])
+print(np.max(arr))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m15')">🔹 np.argmax()</div>
+<div id="m15" class="details">
+  <p><strong>Returns the index of the maximum value.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([5, 2, 9, 1])
+print(np.argmax(arr))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m16')">🔹 np.argmin()</div>
+<div id="m16" class="details">
+  <p><strong>Returns the index of the minimum value.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([5, 2, 9, 1])
+print(np.argmin(arr))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m17')">🔹 np.percentile()</div>
+<div id="m17" class="details">
+  <p><strong>Computes the q-th percentile of the data.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([1, 2, 3, 4, 5])
+print(np.percentile(arr, 50))  # Median</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m18')">🔹 np.quantile()</div>
+<div id="m18" class="details">
+  <p><strong>Computes the quantiles of the data.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([1, 2, 3, 4, 5])
+print(np.quantile(arr, 0.5))  # Median</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m19')">🔹 np.average()</div>
+<div id="m19" class="details">
+  <p><strong>Computes the weighted average of array elements.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([1, 2, 3])
+weights = np.array([0.2, 0.3, 0.5])
+print(np.average(arr, weights=weights))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m20')">🔹 np.corrcoef()</div>
+<div id="m20" class="details">
+  <p><strong>Computes the Pearson correlation coefficient matrix.</strong></p>
+  <pre><code>import numpy as np
+x = np.array([1, 2, 3])
+y = np.array([2, 4, 6])
+print(np.corrcoef(x, y))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m21')">🔹 np.cov()</div>
+<div id="m21" class="details">
+  <p><strong>Computes the covariance matrix.</strong></p>
+  <pre><code>import numpy as np
+x = np.array([1, 2, 3])
+y = np.array([2, 4, 6])
+print(np.cov(x, y))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m22')">🔹 np.histogram()</div>
+<div id="m22" class="details">
+  <p><strong>Computes the histogram of the data.</strong></p>
+  <pre><code>import numpy as np
+data = np.random.randn(1000)
+hist, bins = np.histogram(data, bins=30)
+print(hist)</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m23')">🔹 np.bincount()</div>
+<div id="m23" class="details">
+  <p><strong>Counts number of occurrences of each value in an array of non-negative ints.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([0,1,1,3,2,1,7])
+print(np.bincount(arr))</code></pre>
+</div>
+
+<div class="method" onclick="toggle('m24')">🔹 np.ptp()</div>
+<div id="m24" class="details">
+  <p><strong>Returns the range (max - min) of values along an axis.</strong></p>
+  <pre><code>import numpy as np
+arr = np.array([1, 3, 7, 2])
+print(np.ptp(arr))</code></pre>
+</div>
+<br />
+<br />
+<section class="faq-section">
+  <h2>Frequently Asked Questions (FAQs)</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">What is NumPy used for?</button>
+    <div class="faq-answer">
+      <p>NumPy is a Python library used for numerical computations and working with arrays efficiently.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">How do I create a NumPy array?</button>
+    <div class="faq-answer">
+      <p>You can create a NumPy array using <code>np.array()</code> function by passing a list or tuple.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">What is the difference between np.zeros() and np.ones()?</button>
+    <div class="faq-answer">
+      <p><code>np.zeros()</code> creates an array filled with zeros, while <code>np.ones()</code> creates an array filled with ones.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">How to generate random numbers in NumPy?</button>
+    <div class="faq-answer">
+      <p>Use the <code>np.random</code> module, like <code>np.random.rand()</code> or <code>np.random.randint()</code> to generate random numbers.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">What is broadcasting in NumPy?</button>
+    <div class="faq-answer">
+      <p>Broadcasting allows NumPy to perform arithmetic operations on arrays of different shapes efficiently.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">How to calculate the mean of an array?</button>
+    <div class="faq-answer">
+      <p>You can use <code>np.mean()</code> to compute the average value of array elements.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">What are the advantages of using NumPy over Python lists?</button>
+    <div class="faq-answer">
+      <p>NumPy arrays are faster, consume less memory, and provide many built-in mathematical functions compared to Python lists.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">How to perform matrix multiplication in NumPy?</button>
+    <div class="faq-answer">
+      <p>Use <code>np.dot()</code> or the <code>@</code> operator for matrix multiplication.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">What is the difference between np.array() and np.asarray()?</button>
+    <div class="faq-answer">
+      <p><code>np.array()</code> always copies the input data, while <code>np.asarray()</code> avoids copying if the input is already an array.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">How do I save and load NumPy arrays?</button>
+    <div class="faq-answer">
+      <p>Use <code>np.save()</code> to save and <code>np.load()</code> to load arrays from disk.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">What is a masked array in NumPy?</button>
+    <div class="faq-answer">
+      <p>A masked array allows you to mask or ignore certain elements during computations.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">How do I find the index of the maximum element?</button>
+    <div class="faq-answer">
+      <p>Use <code>np.argmax()</code> to get the index of the maximum value in an array.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">Can I perform element-wise operations on arrays?</button>
+    <div class="faq-answer">
+      <p>Yes, NumPy supports element-wise operations like addition, subtraction, multiplication, and division directly.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">How do I reshape an array?</button>
+    <div class="faq-answer">
+      <p>Use <code>np.reshape()</code> to change the shape of an array without changing its data.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">What is the use of np.linspace()?</button>
+    <div class="faq-answer">
+      <p><code>np.linspace()</code> generates evenly spaced numbers over a specified interval.</p>
+    </div>
+  </div>
+
+    <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">How to handle missing data in NumPy arrays?</button>
+    <div class="faq-answer">
+      <p>You can use masked arrays or NumPy’s <code>nan</code> handling functions like <code>np.isnan()</code>.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">How can I sort a NumPy array?</button>
+    <div class="faq-answer">
+      <p>Use <code>np.sort()</code> to sort the elements of an array.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">What is the difference between np.random.rand() and np.random.randn()?</button>
+    <div class="faq-answer">
+      <p><code>np.random.rand()</code> generates uniform random values in [0,1), while <code>np.random.randn()</code> generates samples from the standard normal distribution.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">Can NumPy be used for machine learning?</button>
+    <div class="faq-answer">
+      <p>Yes, NumPy is foundational for machine learning libraries like scikit-learn, TensorFlow, and PyTorch.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">How to calculate the dot product of two arrays?</button>
+    <div class="faq-answer">
+      <p>Use <code>np.dot()</code> function to calculate the dot product of two arrays.</p>
+    </div>
+  </div>
+</section>
+
+
+  <script>
+    function toggle(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === "block") ? "none" : "block";
+    }
+    function toggleMenu() {
+      const mobileNav = document.getElementById('mobileNav');
+      mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+    }
+    function toggleFAQ(button) {
+    const answer = button.nextElementSibling;
+    if (answer.style.display === "block") {
+      answer.style.display = "none";
+    } else {
+      answer.style.display = "block";
+    }
+  }
+  </script>
+</body>
+<footer>
+  <div class="footer-content">
+    <div>
+      <h3>Follow Us</h3>
+      <ul>
+        <li><a href="https://youtube.com/" target="_blank">📺 YouTube</a></li>
+        <li><a href="https://instagram.com/" target="_blank">📸 Instagram</a></li>
+        <li><a href="https://facebook.com/" target="_blank">📘 Facebook</a></li>
+        <li><a href="https://github.com/" target="_blank">💻 GitHub</a></li>
+        <li><a href="https://t.me/" target="_blank">📲 Telegram</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Useful References</h3>
+      <ul>
+        <li><a href="https://numpy.org/doc/">NumPy Docs</a></li>
+        <li><a href="https://pandas.pydata.org/">Pandas</a></li>
+        <li><a href="https://scikit-learn.org/">Scikit-learn</a></li>
+        <li><a href="https://matplotlib.org/">Matplotlib</a></li>
+        <li><a href="https://www.tensorflow.org/">TensorFlow</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Syist Group</h3>
+      <ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms & Conditions</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Syist Group. All rights reserved.
+  </div>
+</footer>
+</html>
