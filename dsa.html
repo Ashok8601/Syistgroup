@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Canonical URL -->
+<link rel="canonical" href="https://syistgroup.onrender.com/dsa" />
+
+<!-- Meta Description -->
+<meta name="description" content="Interactive guide for Python data types including List, Dictionary, Tuple, and Set with examples, outputs, and detailed explanations. Learn Python data structures easily." />
+
+<!-- Meta Keywords -->
+<meta name="keywords" content="Python List Methods, Python Dict Methods, Python Tuple Methods, Python Set Methods, Python Data Types, Python Interactive Guide, Learn Python, Python for Beginners, Python Course, Python Cheat Sheet, Python Programming" />
+  <title>Python Data structure Types Methods - All In One-Syist Group</title>
+  <style>
+ body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f6f8;
+}
+
+header {
+  background: blueviolet;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo img {
+  height: 30px;
+}
+
+nav.desktop-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav.desktop-nav a,
+.mobile-nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 5px;
+  
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: whitesmoke;
+  border-radius: 2px;
+}
+
+/* Mobile Styles */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  
+  background: black;
+  width: 100%;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-nav.active {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  nav.desktop-nav {
+    display: none;
+  }
+  
+  .menu-toggle {
+    display: flex;
+  }
+}
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+/* ========== Tabs Section ========== */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.tab-btn {
+  background: white;
+  border: 2px solid #2196f3;
+  color: #2196f3;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.tab-btn.active {
+  background-color: #2196f3;
+  color: white;
+}
+.tab-btn:hover:not(.active) {
+  background-color: #e3f2fd;
+}
+
+/* ========== Methods Container ========== */
+.methods-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Accordion Buttons */
+.accordion {
+  background-color: white;
+  color: #2c3e50;
+  cursor: pointer;
+  padding: 1rem;
+  width: 100%;
+  border: none;
+  text-align: left;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 8px;
+  margin: 10px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background-color 0.3s;
+}
+.accordion:hover, .active-acc {
+  background-color: #e3f2fd;
+}
+
+/* Accordion Panel Content */
+.panel {
+  display: none;
+  padding: 1rem;
+  background-color: white;
+  border-left: 4px solid #2196f3;
+  border-radius: 0 0 8px 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 6px rgba(33, 150, 243, 0.1);
+}
+
+/* Code Block Styling */
+code {
+  background: #272727;
+  color: #f8f8f2;
+  padding: 0.6rem;
+  border-radius: 6px;
+  display: block;
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+  line-height: 1.6;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+/* Output & Explanation Boxes */
+.output, .explanation {
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+.output {
+  background-color: #e0f2f1;
+  color: #00695c;
+  font-weight: 600;
+  border-left: 4px solid #004d40;
+}
+.explanation {
+  background-color: #f1f8e9;
+  color: #33691e;
+  border-left: 4px solid #689f38;
+  font-style: italic;
+}
+footer {
+  background: #212121;
+  color: #fff;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-content > div {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-content h3 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #00b4d8;
+}
+
+.footer-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-content ul li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-content ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.footer-content ul li a:hover {
+  color: #00b4d8;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1rem 0 0 0;
+  background: #1a1a1a;
+  font-size: 0.85rem;
+  color: #999;
+  user-select: none;
+  margin-top: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <img src="apple.png" alt="Syist Group Logo">
+    <strong>Syist Group</strong>
+  </div>
+
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav class="desktop-nav">
+    <a href="/home">Home</a>
+    <a href="/about">About</a>
+    <a href="/python">Python</a>
+    <a href="/data-science">Data Science</a>
+    <a href="/ml">ML</a>
+    <a href="/dl">DL</a>
+    <a href="/bee">Business Idea</a>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/home">Home</a>
+    <a href="/about">About</a>
+    <a href="/python">Python</a>
+    <a href="/data-science">Data Science</a>
+    <a href="/ml">ML</a>
+    <a href="/dl">DL</a>
+    <a href="/bee">Business Idea</a>
+  </div>
+</header>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("mobileNav").classList.toggle("active");
+  }
+</script>
+
+<h1>Python Data Types Methods - Interactive Guide</h1>
+
+<div class="tabs">
+  <button class="tab-btn active" data-type="list">List</button>
+  <button class="tab-btn" data-type="dict">Dict</button>
+  <button class="tab-btn" data-type="tuple">Tuple</button>
+  <button class="tab-btn" data-type="set">Set</button>
+</div>
+
+<div class="methods-container" id="methods-container">
+  <!-- Methods will be dynamically injected here -->
+</div>
+
+<script>
+  // Data for each category
+  const dataTypesMethods = {
+  list : [
+  {
+    name: 'list()',
+    example: `x = list(("a", "b"))\nprint(x)`,
+    output: `['a', 'b']`,
+    explanation: 'Converts a tuple or other iterable into a list.'
+  },
+  {
+    name: 'str.split()',
+    example: `"hello world".split()`,
+    output: `['hello', 'world']`,
+    explanation: 'Splits a string into a list using space or specified delimiter.'
+  },
+  {
+    name: '".join()"',
+    example: `' '.join(["hello", "world"])`,
+    output: `"hello world"`,
+    explanation: 'Joins elements of a list into a single string using the given separator.'
+  },
+  {
+    name: 'tuple()',
+    example: `tuple([1, 2])`,
+    output: `(1, 2)`,
+    explanation: 'Converts a list into a tuple.'
+  },
+  {
+    name: 'set()',
+    example: `set([1, 2, 2])`,
+    output: `{1, 2}`,
+    explanation: 'Removes duplicates and returns a set.'
+  },
+  {
+    name: 'dict.keys()',
+    example: `d = {"a": 1}\nprint(list(d.keys()))`,
+    output: `['a']`,
+    explanation: 'Returns a list of all keys in a dictionary.'
+  },
+  {
+    name: 'dict.values()',
+    example: `d = {"a": 1}\nprint(list(d.values()))`,
+    output: `[1]`,
+    explanation: 'Returns a list of all values in a dictionary.'
+  },
+  {
+    name: 'dict.items()',
+    example: `d = {"a": 1}\nprint(list(d.items()))`,
+    output: `[('a', 1)]`,
+    explanation: 'Returns a list of key-value tuple pairs from the dictionary.'
+  },
+  {
+    name: 'range()',
+    example: `list(range(3))`,
+    output: `[0, 1, 2]`,
+    explanation: 'Generates a sequence of numbers and converts it to a list.'
+  },
+  {
+    name: 'json.loads()',
+    example: `import json\njson.loads('[1, 2]')`,
+    output: `[1, 2]`,
+    explanation: 'Parses a JSON-formatted string and converts it into a Python list (or dict).'
+  },
+  {
+    name: 'json.dumps()',
+    example: `import json\njson.dumps([1, 2])`,
+    output: `'[1, 2]'`,
+    explanation: 'Converts a Python list (or dict) into a JSON-formatted string.'
+  },
+  {
+    name: 'numpy.array()',
+    example: `import numpy as np\na = np.array([1, 2])\nprint(a)`,
+    output: `array([1, 2])`,
+    explanation: 'Creates a NumPy array from a list.'
+  },
+  {
+    name: 'array.tolist()',
+    example: `import numpy as np\na = np.array([1, 2])\nprint(a.tolist())`,
+    output: `[1, 2]`,
+    explanation: 'Converts a NumPy array back to a Python list.'
+  },
+  {
+    name: `df['col'].tolist()`,
+    example: `import pandas as pd\ndf = pd.DataFrame({"col": [1, 2]})\nprint(df['col'].tolist())`,
+    output: `[1, 2]`,
+    explanation: 'Converts a Pandas column to a list.'
+  },
+  {
+    name: 'append()',
+    example: `lst = [1, 2]\nlst.append(3)\nprint(lst)`,
+    output: `[1, 2, 3]`,
+    explanation: 'Adds a single element to the end of a list.'
+  },
+  {
+    name: 'extend()',
+    example: `lst = [1, 2]\nlst.extend([3, 4])\nprint(lst)`,
+    output: `[1, 2, 3, 4]`,
+    explanation: 'Extends a list by appending elements from another iterable.'
+  },
+  {
+    name: 'insert()',
+    example: `lst = [1, 3]\nlst.insert(1, 2)\nprint(lst)`,
+    output: `[1, 2, 3]`,
+    explanation: 'Inserts an element at a specified position.'
+  },
+  {
+    name: 'remove()',
+    example: `lst = [1, 2, 3]\nlst.remove(2)\nprint(lst)`,
+    output: `[1, 3]`,
+    explanation: 'Removes the first occurrence of the specified value.'
+  },
+  {
+    name: 'pop()',
+    example: `lst = [1, 2, 3]\nlst.pop()\nprint(lst)`,
+    output: `[1, 2]`,
+    explanation: 'Removes and returns the last element by default.'
+  },
+  {
+    name: 'clear()',
+    example: `lst = [1, 2]\nlst.clear()\nprint(lst)`,
+    output: `[]`,
+    explanation: 'Removes all elements from the list.'
+  },
+  {
+    name: 'index()',
+    example: `lst = [1, 2, 3]\nprint(lst.index(2))`,
+    output: `1`,
+    explanation: 'Returns the index of the first matching element.'
+  },
+  {
+    name: 'count()',
+    example: `lst = [1, 2, 2, 3]\nprint(lst.count(2))`,
+    output: `2`,
+    explanation: 'Returns the number of occurrences of a value.'
+  },
+  {
+    name: 'sort()',
+    example: `lst = [3, 1, 2]\nlst.sort()\nprint(lst)`,
+    output: `[1, 2, 3]`,
+    explanation: 'Sorts the list in ascending order.'
+  },
+  {
+    name: 'reverse()',
+    example: `lst = [1, 2, 3]\nlst.reverse()\nprint(lst)`,
+    output: `[3, 2, 1]`,
+    explanation: 'Reverses the list in place.'
+  },
+  {
+    name: 'copy()',
+    example: `lst = [1, 2, 3]\ncopy_lst = lst.copy()\nprint(copy_lst)`,
+    output: `[1, 2, 3]`,
+    explanation: 'Returns a shallow copy of the list.'
+  },
+  {
+    name: 'list comprehension',
+    example: `[x*x for x in range(3)]`,
+    output: `[0, 1, 4]`,
+    explanation: 'Creates a new list using a compact loop.'
+  },
+  {
+    name: 'nested list comprehension',
+    example: `[[i*j for j in range(2)] for i in range(2)]`,
+    output: `[[0, 0], [0, 1]]`,
+    explanation: 'List comprehension inside another one.'
+  },
+  {
+    name: 'map()',
+    example: `list(map(str, [1, 2, 3]))`,
+    output: `['1', '2', '3']`,
+    explanation: 'Applies a function to all items in the list.'
+  },
+  {
+    name: 'filter()',
+    example: `list(filter(lambda x: x%2==0, [1, 2, 3]))`,
+    output: `[2]`,
+    explanation: 'Filters items that match a condition.'
+  },
+  {
+    name: 'reduce()',
+    example: `from functools import reduce\nreduce(lambda x,y: x+y, [1,2,3])`,
+    output: `6`,
+    explanation: 'Applies a function cumulatively to the list.'
+  },
+  {
+    name: 'enumerate()',
+    example: `list(enumerate(['a','b']))`,
+    output: `[(0, 'a'), (1, 'b')]`,
+    explanation: 'Adds index to each item.'
+  },
+  {
+    name: 'zip()',
+    example: `list(zip([1,2], ['a','b']))`,
+    output: `[(1, 'a'), (2, 'b')]`,
+    explanation: 'Combines multiple iterables.'
+  },
+  {
+    name: 'reversed()',
+    example: `list(reversed([1, 2, 3]))`,
+    output: `[3, 2, 1]`,
+    explanation: 'Returns a reversed iterator.'
+  },
+  {
+    name: 'sorted()',
+    example: `sorted([3, 1, 2])`,
+    output: `[1, 2, 3]`,
+    explanation: 'Returns a new sorted list.'
+  },
+  {
+    name: 'any()',
+    example: `any([False, True])`,
+    output: `True`,
+    explanation: 'Returns True if any element is True.'
+  },
+  {
+    name: 'all()',
+    example: `all([True, True])`,
+    output: `True`,
+    explanation: 'Returns True if all elements are True.'
+  },
+  {
+    name: 'min()',
+    example: `min([3, 1, 2])`,
+    output: `1`,
+    explanation: 'Returns the smallest value.'
+  },
+  {
+    name: 'max()',
+    example: `max([3, 1, 2])`,
+    output: `3`,
+    explanation: 'Returns the largest value.'
+  },
+  {
+    name: 'sum()',
+    example: `sum([1, 2, 3])`,
+    output: `6`,
+    explanation: 'Returns the sum of all elements.'
+  },
+  {
+    name: 'slice',
+    example: `lst = [0,1,2,3]\nprint(lst[1:3])`,
+    output: `[1, 2]`,
+    explanation: 'Slicing returns a portion of the list.'
+  },
+  {
+    name: 'del',
+    example: `lst = [1, 2, 3]\ndel lst[1]\nprint(lst)`,
+    output: `[1, 3]`,
+    explanation: 'Deletes item at specified index.'
+  },
+  {
+    name: 'in / not in',
+    example: `2 in [1, 2, 3]`,
+    output: `True`,
+    explanation: 'Checks if an element exists in the list.'
+  },
+  {
+    name: '+ operator',
+    example: `[1, 2] + [3, 4]`,
+    output: `[1, 2, 3, 4]`,
+    explanation: 'Concatenates two lists.'
+  },
+  {
+    name: '* operator',
+    example: `["a"] * 3`,
+    output: `['a', 'a', 'a']`,
+    explanation: 'Repeats the list elements.'
+  },
+  {
+    name: '[:]',
+    example: `a = [1,2,3]\nb = a[:]`,
+    output: `[1, 2, 3]`,
+    explanation: 'Creates a shallow copy using slicing.'
+  },
+  {
+    name: '[::]',
+    example: `a = [0,1,2,3,4]\nprint(a[::-1])`,
+    output: `[4, 3, 2, 1, 0]`,
+    explanation: 'Reverses the list using slicing.'
+  }
+],
+   dict: [
+  {
+    name: 'get()',
+    example: `d = {"a": 1}\nprint(d.get("a"))`,
+    output: `1`,
+    explanation: "Returns the value for the specified key. Returns None if key not found."
+  },
+  {
+    name: 'keys()',
+    example: `d = {"a": 1}\nprint(list(d.keys()))`,
+    output: `['a']`,
+    explanation: "Returns a view object with all the keys."
+  },
+  {
+    name: 'values()',
+    example: `d = {"a": 1}\nprint(list(d.values()))`,
+    output: `[1]`,
+    explanation: "Returns a view object with all the values."
+  },
+  {
+    name: 'items()',
+    example: `d = {"a": 1}\nprint(list(d.items()))`,
+    output: `[('a', 1)]`,
+    explanation: "Returns all key-value pairs as tuples."
+  },
+  {
+    name: 'update()',
+    example: `d = {"a": 1}\nd.update({"b": 2})\nprint(d)`,
+    output: `{'a': 1, 'b': 2}`,
+    explanation: "Updates the dictionary with another dictionary or key-value pairs."
+  },
+  {
+    name: 'pop()',
+    example: `d = {"a": 1, "b": 2}\nd.pop("a")\nprint(d)`,
+    output: `{'b': 2}`,
+    explanation: "Removes the specified key and returns its value."
+  },
+  {
+    name: 'popitem()',
+    example: `d = {"a": 1, "b": 2}\nd.popitem()\nprint(d)`,
+    output: `{'a': 1}`,
+    explanation: "Removes and returns the last inserted key-value pair."
+  },
+  {
+    name: 'setdefault()',
+    example: `d = {"a": 1}\nd.setdefault("b", 2)\nprint(d)`,
+    output: `{'a': 1, 'b': 2}`,
+    explanation: "Returns the value if key exists, otherwise inserts and returns default."
+  },
+  {
+    name: 'clear()',
+    example: `d = {"a": 1}\nd.clear()\nprint(d)`,
+    output: `{}`,
+    explanation: "Removes all items from the dictionary."
+  },
+  {
+    name: 'copy()',
+    example: `d = {"a": 1}\nd2 = d.copy()\nprint(d2)`,
+    output: `{'a': 1}`,
+    explanation: "Returns a shallow copy of the dictionary."
+  },
+  {
+    name: 'fromkeys()',
+    example: `keys = ['a', 'b']\nd = dict.fromkeys(keys, 0)\nprint(d)`,
+    output: `{'a': 0, 'b': 0}`,
+    explanation: "Creates a new dictionary with keys and a default value."
+  },
+  {
+    name: 'dict comprehension',
+    example: `{x: x**2 for x in range(3)}`,
+    output: `{0: 0, 1: 1, 2: 4}`,
+    explanation: "Creates a dictionary using a single line loop."
+  },
+  {
+    name: 'in',
+    example: `d = {"a": 1}\nprint("a" in d)`,
+    output: `True`,
+    explanation: "Checks if a key is present in the dictionary."
+  },
+  {
+    name: 'not in',
+    example: `d = {"a": 1}\nprint("b" not in d)`,
+    output: `True`,
+    explanation: "Checks if a key is not present in the dictionary."
+  },
+  {
+    name: 'len()',
+    example: `d = {"a": 1, "b": 2}\nprint(len(d))`,
+    output: `2`,
+    explanation: "Returns the number of items in the dictionary."
+  },
+  {
+    name: 'for k in dict',
+    example: `d = {"a": 1, "b": 2}\nfor k in d:\n  print(k)`,
+    output: `a\nb`,
+    explanation: "Iterates through keys of dictionary."
+  },
+  {
+    name: 'for k, v in dict.items()',
+    example: `d = {"a": 1}\nfor k, v in d.items():\n  print(k, v)`,
+    output: `a 1`,
+    explanation: "Iterates through key-value pairs."
+  },
+  {
+    name: 'dict[k] = v',
+    example: `d = {}\nd["a"] = 1\nprint(d)`,
+    output: `{'a': 1}`,
+    explanation: "Assigns a value to a key in the dictionary."
+  },
+  {
+    name: 'del dict[k]',
+    example: `d = {"a": 1}\ndel d["a"]\nprint(d)`,
+    output: `{}`,
+    explanation: "Deletes a key-value pair from the dictionary."
+  },
+  {
+    name: 'k in dict',
+    example: `d = {"x": 10}\nprint("x" in d)`,
+    output: `True`,
+    explanation: "Checks if the key exists."
+  },
+  {
+    name: 'dict1 == dict2',
+    example: `{"a": 1} == {"a": 1}`,
+    output: `True`,
+    explanation: "Checks if two dictionaries are equal in keys and values."
+  },
+  {
+    name: 'dict()',
+    example: `d = dict(a=1, b=2)\nprint(d)`,
+    output: `{'a': 1, 'b': 2}`,
+    explanation: "Creates a dictionary using keyword arguments."
+  },
+  {
+    name: 'list of tuples → dict()',
+    example: `lst = [("a", 1), ("b", 2)]\nd = dict(lst)\nprint(d)`,
+    output: `{'a': 1, 'b': 2}`,
+    explanation: "Converts list of key-value pairs into dictionary."
+  },
+  {
+    name: 'zip(keys, values) → dict()',
+    example: `keys = ['a', 'b']\nvals = [1, 2]\nd = dict(zip(keys, vals))\nprint(d)`,
+    output: `{'a': 1, 'b': 2}`,
+    explanation: "Creates dictionary from zipped keys and values."
+  },
+  {
+    name: 'json.loads()',
+    example: `import json\ns = '{"a": 1}'\nd = json.loads(s)\nprint(d)`,
+    output: `{'a': 1}`,
+    explanation: "Converts JSON string into dictionary."
+  },
+  {
+    name: 'json.dumps()',
+    example: `import json\nd = {"a": 1}\ns = json.dumps(d)\nprint(s)`,
+    output: `"{"a": 1}"`,
+    explanation: "Converts dictionary into JSON string."
+  },
+  {
+    name: 'df.to_dict()',
+    example: `import pandas as pd\ndf = pd.DataFrame({"a": [1]})\nprint(df.to_dict())`,
+    output: `{'a': {0: 1}}`,
+    explanation: "Converts a DataFrame to dictionary."
+  }
+],
+    tuple: [
+  {
+    name: 'count()',
+    example: `t = (1, 2, 2, 3)\nprint(t.count(2))`,
+    output: `2`,
+    explanation: "Returns the number of times a specified value appears in the tuple."
+  },
+  {
+    name: 'index()',
+    example: `t = (1, 2, 3)\nprint(t.index(2))`,
+    output: `1`,
+    explanation: "Returns the first index of the specified value."
+  },
+  {
+    name: 'tuple()',
+    example: `x = tuple([1, 2, 3])\nprint(x)`,
+    output: `(1, 2, 3)`,
+    explanation: "Converts a list or iterable into a tuple."
+  },
+  {
+    name: 'list → tuple()',
+    example: `l = [1, 2, 3]\nt = tuple(l)\nprint(t)`,
+    output: `(1, 2, 3)`,
+    explanation: "Converts a list to a tuple."
+  },
+  {
+    name: 'str → tuple()',
+    example: `s = "abc"\nt = tuple(s)\nprint(t)`,
+    output: `('a', 'b', 'c')`,
+    explanation: "Converts a string into a tuple of characters."
+  },
+  {
+    name: 'set → tuple()',
+    example: `s = {1, 2, 3}\nt = tuple(s)\nprint(t)`,
+    output: `(1, 2, 3)`,
+    explanation: "Converts a set to a tuple (order not guaranteed)."
+  },
+  {
+    name: 'dict.keys() → tuple()',
+    example: `d = {'a':1, 'b':2}\nt = tuple(d.keys())\nprint(t)`,
+    output: `('a', 'b')`,
+    explanation: "Converts dict keys into a tuple."
+  },
+  {
+    name: 'dict.values() → tuple()',
+    example: `d = {'a':1, 'b':2}\nt = tuple(d.values())\nprint(t)`,
+    output: `(1, 2)`,
+    explanation: "Converts dict values into a tuple."
+  },
+  {
+    name: 'dict.items() → tuple()',
+    example: `d = {'a':1, 'b':2}\nt = tuple(d.items())\nprint(t)`,
+    output: `(('a', 1), ('b', 2))`,
+    explanation: "Converts dict items into a tuple of key-value pairs."
+  },
+  {
+    name: 'zip() → tuple()',
+    example: `a = [1,2]\nb = ['x','y']\nt = tuple(zip(a, b))\nprint(t)`,
+    output: `((1, 'x'), (2, 'y'))`,
+    explanation: "Zips two lists and converts result to tuple."
+  },
+  {
+    name: 'tuple unpacking',
+    example: `a, b = (1, 2)\nprint(a)\nprint(b)`,
+    output: `1\n2`,
+    explanation: "Assigns elements of a tuple to individual variables."
+  },
+  {
+    name: 'in',
+    example: `t = (1, 2, 3)\nprint(2 in t)`,
+    output: `True`,
+    explanation: "Checks if an element is present in the tuple."
+  },
+  {
+    name: 'not in',
+    example: `t = (1, 2, 3)\nprint(4 not in t)`,
+    output: `True`,
+    explanation: "Checks if an element is not present in the tuple."
+  },
+  {
+    name: 'len()',
+    example: `t = (1, 2, 3)\nprint(len(t))`,
+    output: `3`,
+    explanation: "Returns the number of items in a tuple."
+  },
+  {
+    name: '+ (concatenation)',
+    example: `t1 = (1, 2)\nt2 = (3, 4)\nprint(t1 + t2)`,
+    output: `(1, 2, 3, 4)`,
+    explanation: "Concatenates two tuples."
+  },
+  {
+    name: '* (repeat)',
+    example: `t = (1, 2)\nprint(t * 2)`,
+    output: `(1, 2, 1, 2)`,
+    explanation: "Repeats the tuple elements."
+  },
+  {
+    name: '[:]',
+    example: `t = (0, 1, 2, 3)\nprint(t[1:3])`,
+    output: `(1, 2)`,
+    explanation: "Returns a slice of the tuple from index 1 to 2."
+  },
+  {
+    name: '[::]',
+    example: `t = (1, 2, 3, 4)\nprint(t[::-1])`,
+    output: `(4, 3, 2, 1)`,
+    explanation: "Returns reversed tuple using slicing."
+  },
+  {
+    name: 'for x in tuple',
+    example: `t = (1, 2, 3)\nfor i in t:\n  print(i)`,
+    output: `1\n2\n3`,
+    explanation: "Iterates over a tuple."
+  },
+  {
+    name: 'nested tuples',
+    example: `t = ((1, 2), (3, 4))\nprint(t[1][0])`,
+    output: `3`,
+    explanation: "Accesses inner tuple elements."
+  },
+  {
+    name: 'tuple1 == tuple2',
+    example: `(1, 2) == (1, 2)`,
+    output: `True`,
+    explanation: "Checks equality between two tuples."
+  },
+  {
+    name: 'tuple comprehension via generator',
+    example: `t = tuple(x*x for x in range(3))\nprint(t)`,
+    output: `(0, 1, 4)`,
+    explanation: "Generates a tuple using generator expression."
+  }
+],
+set: [
+  {
+    name: 'set()',
+    example: `s = set([1, 2, 2])\nprint(s)`,
+    output: `{1, 2}`,
+    explanation: 'Duplicates are removed in sets.'
+  },
+  {
+    name: 'add()',
+    example: `s = {1, 2}\ns.add(3)\nprint(s)`,
+    output: `{1, 2, 3}`,
+    explanation: 'Adds an element to the set.'
+  },
+  {
+    name: 'update()',
+    example: `s = {1}\ns.update([2, 3])\nprint(s)`,
+    output: `{1, 2, 3}`,
+    explanation: 'Adds multiple elements to the set.'
+  },
+  {
+    name: 'remove()',
+    example: `s = {1, 2, 3}\ns.remove(2)\nprint(s)`,
+    output: `{1, 3}`,
+    explanation: 'Removes specified element; raises error if not found.'
+  },
+  {
+    name: 'discard()',
+    example: `s = {1, 2}\ns.discard(2)\nprint(s)`,
+    output: `{1}`,
+    explanation: 'Removes element if present; does nothing if not found.'
+  },
+  {
+    name: 'clear()',
+    example: `s = {1, 2}\ns.clear()\nprint(s)`,
+    output: `set()`,
+    explanation: 'Removes all elements from the set.'
+  },
+  {
+    name: 'union()',
+    example: `a = {1, 2}\nb = {2, 3}\nprint(a.union(b))`,
+    output: `{1, 2, 3}`,
+    explanation: 'Returns the union of two sets.'
+  },
+  {
+    name: 'intersection()',
+    example: `a = {1, 2}\nb = {2, 3}\nprint(a.intersection(b))`,
+    output: `{2}`,
+    explanation: 'Returns common elements.'
+  },
+  {
+    name: 'difference()',
+    example: `a = {1, 2, 3}\nb = {2}\nprint(a.difference(b))`,
+    output: `{1, 3}`,
+    explanation: 'Returns elements in a not in b.'
+  },
+  {
+    name: 'copy()',
+    example: `a = {1, 2}\nb = a.copy()\nprint(b)`,
+    output: `{1, 2}`,
+    explanation: 'Returns a shallow copy of the set.'
+  }
+]
+  };
+  const container = document.getElementById('methods-container');
+  const tabs = document.querySelectorAll('.tab-btn');
+
+  function createAccordionItem(method, idx) {
+    const btn = document.createElement("button");
+    btn.className = "accordion";
+    btn.textContent = `${idx + 1}. ${method.name}`;
+
+    const panel = document.createElement("div");
+    panel.className = "panel";
+
+    const code = document.createElement("code");
+    code.textContent = method.example;
+
+    const outputDiv = document.createElement("div");
+    outputDiv.className = "output";
+    outputDiv.textContent = `Output → ${method.output}`;
+
+    const explanationDiv = document.createElement("div");
+    explanationDiv.className = "explanation";
+    explanationDiv.textContent = `Explanation → ${method.explanation}`;
+
+    panel.appendChild(code);
+    panel.appendChild(outputDiv);
+    panel.appendChild(explanationDiv);
+
+    btn.addEventListener("click", function () {
+      const isActive = btn.classList.contains("active-acc");
+      // Close all other accordions first
+      container.querySelectorAll('.accordion').forEach(b => {
+        b.classList.remove("active-acc");
+      });
+      container.querySelectorAll('.panel').forEach(p => {
+        p.style.display = "none";
+      });
+      // Toggle current accordion
+      if (!isActive) {
+        btn.classList.add("active-acc");
+        panel.style.display = "block";
+      }
+    });
+
+    container.appendChild(btn);
+    container.appendChild(panel);
+  }
+
+  function loadMethods(type) {
+    container.innerHTML = ''; // clear old
+    dataTypesMethods[type].forEach((method, i) => {
+      createAccordionItem(method, i);
+    });
+  }
+
+  // Initialize with "list"
+  loadMethods('list');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Remove active class from all tabs
+      tabs.forEach(t => t.classList.remove('active'));
+      // Add active to clicked tab
+      tab.classList.add('active');
+      // Load methods of selected type
+      loadMethods(tab.getAttribute('data-type'));
+    });
+  });
+  function toggle(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === "block") ? "none" : "block";
+    }
+  function toggleMenu() {
+      const mobileNav = document.getElementById('mobileNav');
+      mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+    }
+</script>
+
+</body>
+<br />
+<br />
+<footer>
+  <div class="footer-content">
+    <div>
+      <h3>Follow Us</h3>
+      <ul>
+        <li><a href="https://youtube.com/" target="_blank">📺 YouTube</a></li>
+        <li><a href="https://instagram.com/" target="_blank">📸 Instagram</a></li>
+        <li><a href="https://facebook.com/" target="_blank">📘 Facebook</a></li>
+        <li><a href="https://github.com/" target="_blank">💻 GitHub</a></li>
+        <li><a href="https://t.me/" target="_blank">📲 Telegram</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Useful References</h3>
+      <ul>
+        <li><a href="https://numpy.org/doc/">NumPy Docs</a></li>
+        <li><a href="https://pandas.pydata.org/">Pandas</a></li>
+        <li><a href="https://scikit-learn.org/">Scikit-learn</a></li>
+        <li><a href="https://matplotlib.org/">Matplotlib</a></li>
+        <li><a href="https://www.tensorflow.org/">TensorFlow</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Syist Group</h3>
+      <ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms & Conditions</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Syist Group. All rights reserved.
+  </div>
+</footer>
+</html>
