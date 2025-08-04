@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ✅ Google Tag (gtag.js) -->
+  <meta name="robots" content="index, follow">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7J5BC4G8E6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7J5BC4G8E6');
+  </script>
+  <meta charset="UTF-8" />
+   <meta name="description" content="Explore a complete interactive list of NumPy methods with examples and explanations. Learn NumPy for data science, machine learning, and scientific computing.">
+
+  
+  <meta name="keywords" content="NumPy in Python, NumPy methods list, NumPy tutorial, NumPy array creation, NumPy mathematical functions, NumPy for data science, NumPy random module, NumPy statistics functions, learn NumPy Python, NumPy examples, NumPy guide, NumPy cheat sheet, NumPy documentation simplified, NumPy interactive tool, NumPy array operations, NumPy for machine learning, NumPy full course, NumPy complete reference, Python array manipulation, NumPy explained for beginners">
+
+  
+  <link rel="canonical" href="https://syistgroup.onrender.com/numpy">
+
+  
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="NumPy Methods in Python - Interactive Guide | Syist Group" />
+  <meta property="og:description" content="Browse all NumPy methods with code examples. Learn how to use NumPy for Python programming, machine learning, and data analysis." />
+  <meta property="og:url" content="https://syistgroup.onrender.com/numpy" />
+  <meta property="og:site_name" content="Syist Group" />
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg" />
+
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NumPy Methods in Python - Interactive Guide" />
+  <meta name="twitter:description" content="Master NumPy with this interactive cheat sheet covering all essential functions." />
+  <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Learn All Methods of Python Libraries For Data Science Machin Learning -Syist Group</title>
+  
+  <style>
+  /* Global Styles */
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f6f8;
+    padding: 0rem;
+    margin: 0;
+    color: #34495e;
+  }
+
+  h1 {
+    text-align: center;
+    color: #2c3e50;
+  }
+
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #212121;
+    color: #fff;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  nav {
+    display: flex;
+    gap: 1.2rem;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  nav a:hover {
+    background: #333;
+  }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin: 4px 0;
+  }
+
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    background: #333;
+    padding: 1rem;
+    position: absolute;
+    right: 1rem;
+    top: 70px;
+    z-index: 10;
+    border-radius: 5px;
+  }
+
+  .mobile-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 0.8rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 3rem 1rem;
+    text-align: center;
+    background: linear-gradient(to right, #0077b6, #00b4d8);
+    color: white;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: 1.3rem;
+  }
+
+  /* Tabs Section */
+  .tabs {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0 1rem;
+    flex-wrap: wrap;
+  }
+
+  .tabs button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: #2980b9;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .tabs button.active {
+    background: #27ae60;
+  }
+
+  .library-content {
+    display: none;
+  }
+
+  .library-content.active {
+    display: block;
+  }
+
+  details {
+    margin: 10px 0;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0.8rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+
+  summary {
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #2980b9;
+  }
+
+  p, pre {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: #34495e;
+  }
+
+  pre {
+    background: #f0f0f0;
+    padding: 0.5rem;
+    border-radius: 5px;
+    overflow-x: auto;
+  }
+
+  /* FAQ Section */
+  .faq-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .faq-section h2 {
+    text-align: center;
+    color: #1d3557;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .faq-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .faq-question {
+    width: 100%;
+    background: #457b9d;
+    color: white;
+    cursor: pointer;
+    padding: 15px 20px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 6px 6px 0 0;
+    transition: background 0.3s ease;
+  }
+
+  .faq-question:hover {
+    background: #1d3557;
+  }
+
+  .faq-answer {
+    display: none;
+    padding: 15px 20px;
+    background: white;
+    font-size: 1rem;
+    color: #333;
+    border-radius: 0 0 6px 6px;
+    line-height: 1.5;
+  }
+
+  /* Footer */
+  footer {
+    background: #212121;
+    color: #fff;
+    padding: 0rem 0rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    box-sizing: border-box;
+    margin-top: 0rem;
+  }
+
+  .footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .footer-content > div {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .footer-content h3 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #00b4d8;
+  }
+
+  .footer-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-content ul li {
+    margin-bottom: 0.6rem;
+  }
+
+  .footer-content ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-block;
+  }
+
+  .footer-content ul li a:hover {
+    color: #00b4d8;
+    text-decoration: underline;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding: 1rem 0 0 0;
+    background: #1a1a1a;
+    font-size: 0.85rem;
+    color: #999;
+    user-select: none;
+    margin-top: 1.5rem;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    nav {
+      display: none;
+    }
+
+    .menu-toggle {
+      display: flex;
+    }
+
+    .hero h1 {
+      font-size: 1.8rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+    }
+
+    .footer-content {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .faq-question {
+      font-size: 1rem;
+      padding: 12px 15px;
+    }
+
+    .faq-answer {
+      font-size: 0.9rem;
+      padding: 12px 15px;
+    }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is NumPy used for in Python?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NumPy is used for numerical computing in Python, providing support for arrays, matrices, and mathematical functions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to create arrays using NumPy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can create arrays using np.array(), np.zeros(), np.ones(), np.arange(), and other array creation functions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the basic mathematical functions in NumPy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Basic mathematical functions include np.add(), np.subtract(), np.multiply(), np.divide(), np.sqrt(), np.power(), and more."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to generate random numbers in NumPy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can use np.random.rand(), np.random.randint(), np.random.randn(), np.random.choice() for generating random numbers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to calculate mean and median in NumPy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use np.mean() to calculate mean and np.median() to calculate median of an array."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is broadcasting in NumPy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Broadcasting allows NumPy to perform arithmetic operations on arrays of different shapes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to reshape an array in NumPy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the reshape() method to change the shape of an array without changing its data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to perform matrix multiplication in NumPy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use np.dot() or the @ operator for matrix multiplication."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to find the index of the max value in an array?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use np.argmax() function to find the index of the maximum value in an array."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between np.array() and np.asarray()?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "np.array() copies data by default, np.asarray() avoids copying if input is already an array."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to install NumPy in Python?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can install NumPy using the command pip install numpy in your terminal or command prompt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a NumPy ndarray?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An ndarray is the core data structure in NumPy which stands for N-dimensional array and supports vectorized operations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to generate a range of values in NumPy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use np.arange(start, stop, step) or np.linspace(start, stop, num) to generate sequences."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the shape and size of a NumPy array?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use .shape to get dimensions and .size to get total number of elements in an array."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to flatten a multi-dimensional NumPy array?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can use flatten() or ravel() methods to convert multi-dimensional arrays into 1D."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the purpose of np.where()?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "np.where() is used for condition-based element selection or replacement in arrays."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to stack arrays in NumPy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can use np.vstack() to stack vertically and np.hstack() to stack horizontally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the use of np.unique()?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "np.unique() returns the sorted unique elements of an array."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can NumPy be used with pandas and matplotlib?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, NumPy works seamlessly with pandas and matplotlib for data analysis and visualization."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is NumPy faster than regular Python lists?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, NumPy arrays are much faster than Python lists due to vectorized operations and compact memory storage."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+<body>
+  
+  <header>
+    <div class="logo">
+      <img src="apple.png" alt="Syist Group Logo">
+      <strong>Syist Group</strong>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav>
+      <a href="/home">Home</a>
+      <a href="/about">About</a>
+      <a href="/python">Python</a>
+      <a href="/data-science">Data Science</a>
+      <a href="/ml">ML</a>
+      <a href="/dl">DL</a>
+      <a href="/bee">Business Idea</a>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+      <a href="/home">Home</a>
+      <a href="/about">About</a>
+      <a href="/python">Python</a>
+      <a href="/data-science">Data Science</a>
+      <a href="/ml">ML</a>
+      <a href="/dl">DL</a>
+      <a href="/bee">Business Idea</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1><strong>Syist Group</strong> take the responsibility to make you a successful Python Developer.</h1>
+    
+  </section>
+  </header>
+    <h1>Python Library Methods Explorer</h1>
+  <div class="tabs">
+    <button onclick="showLibrary('pandas', this)" class="active">Pandas</button>
+    <button onclick="showLibrary('numpy', this)">NumPy</button>
+    <button onclick="showLibrary('matplotlib', this)">Matplotlib</button>
+    <button onclick="showLibrary('seaborn', this)">Seaborn</button>
+  </div>
+
+  <div id="pandas" class="library-content active"></div>
+  <div id="numpy" class="library-content"></div>
+  <div id="matplotlib" class="library-content"></div>
+  <div id="seaborn" class="library-content"></div>
+
+  <script>
+    const libraries = {
+      pandas: {
+        "head()": {
+          desc: "Returns the first 5 rows of the DataFrame.",
+          code: "df.head()"
+        },
+        "tail()": {
+          desc: "Returns the last 5 rows of the DataFrame.",
+          code: "df.tail()"
+        },
+        "shape": {
+          desc: "Returns a tuple representing the dimensionality.",
+          code: "df.shape"
+        },
+        "columns": {
+          desc: "Returns the column labels.",
+          code: "df.columns"
+        },
+        "index": {
+          desc: "Returns the row index.",
+          code: "df.index"
+        },
+        "dtypes": {
+          desc: "Returns data types of each column.",
+          code: "df.dtypes"
+        },
+        "ndim": {
+          desc: "Returns the number of dimensions.",
+          code: "df.ndim"
+        },
+        "size": {
+          desc: "Returns the total number of elements.",
+          code: "df.size"
+        },
+        "values": {
+          desc: "Returns a Numpy representation of the DataFrame.",
+          code: "df.values"
+        },
+        "info()": {
+          desc: "Summary including dtypes and non-null values.",
+          code: "df.info()"
+        },
+        "describe()": {
+          desc: "Generates summary statistics.",
+          code: "df.describe()"
+        },
+        "T": {
+          desc: "Transposes the DataFrame.",
+          code: "df.T"
+        },
+        "to_numpy()": {
+          desc: "Converts to a NumPy array.",
+          code: "df.to_numpy()"
+        },
+        "to_dict()": {
+          desc: "Converts to Python dictionary.",
+          code: "df.to_dict()"
+        },
+        "to_csv()": {
+          desc: "Writes DataFrame to a CSV file.",
+          code: "df.to_csv('file.csv')"
+        },
+        "to_excel()": {
+          desc: "Writes DataFrame to an Excel file.",
+          code: "df.to_excel('file.xlsx')"
+        },
+        "to_json()": {
+          desc: "Converts to JSON format.",
+          code: "df.to_json()"
+        },
+        "copy()": {
+          desc: "Returns a copy of the DataFrame.",
+          code: "df.copy()"
+        },
+        "sort_values()": {
+          desc: "Sorts by values in specified column.",
+          code: "df.sort_values('column_name')"
+        },
+        "sort_index()": {
+          desc: "Sorts by index.",
+          code: "df.sort_index()"
+        },
+        "drop()": {
+          desc: "Drops rows or columns.",
+          code: "df.drop('column_name', axis=1)"
+        },
+        "dropna()": {
+          desc: "Drops missing values.",
+          code: "df.dropna()"
+        },
+        "fillna()": {
+          desc: "Fills missing values.",
+          code: "df.fillna(0)"
+        },
+        "isnull()": {
+          desc: "Detects missing values.",
+          code: "df.isnull()"
+        },
+        "notnull()": {
+          desc: "Opposite of isnull.",
+          code: "df.notnull()"
+        },
+        "replace()": {
+          desc: "Replaces values.",
+          code: "df.replace('old', 'new')"
+        },
+        "duplicated()": {
+          desc: "Finds duplicate rows.",
+          code: "df.duplicated()"
+        },
+        "drop_duplicates()": {
+          desc: "Drops duplicate rows.",
+          code: "df.drop_duplicates()"
+        },
+        "astype()": {
+          desc: "Converts dtype of a column.",
+          code: "df['col'].astype(int)"
+        },
+        "set_index()": {
+          desc: "Sets column as index.",
+          code: "df.set_index('column')"
+        },
+        "reset_index()": {
+          desc: "Resets index to default.",
+          code: "df.reset_index()"
+        },
+        "rename()": {
+          desc: "Renames columns or index.",
+          code: "df.rename(columns={'old':'new'})"
+        },
+        "apply()": {
+          desc: "Applies function along axis.",
+          code: "df['col'].apply(lambda x: x*2)"
+        },
+        "applymap()": {
+          desc: "Element-wise function (only for DataFrame).",
+          code: "df.applymap(lambda x: x**2)"
+        },
+        "map()": {
+          desc: "Maps values (for Series).",
+          code: "df['col'].map({'a':1, 'b':2})"
+        },
+        "groupby()": {
+          desc: "Groups and aggregates data.",
+          code: "df.groupby('col').mean()"
+        },
+        "pivot()": {
+          desc: "Reshapes data using pivot.",
+          code: "df.pivot(index='A', columns='B', values='C')"
+        },
+        "pivot_table()": {
+          desc: "Creates a pivot table.",
+          code: "df.pivot_table(index='A', columns='B', aggfunc='sum')"
+        },
+        "melt()": {
+          desc: "Unpivots a DataFrame.",
+          code: "pd.melt(df, id_vars=['id'])"
+        },
+        "stack()": {
+          desc: "Stacks columns to rows.",
+          code: "df.stack()"
+        },
+        "unstack()": {
+          desc: "Unstacks rows to columns.",
+          code: "df.unstack()"
+        },
+        "merge()": {
+          desc: "Merges two DataFrames.",
+          code: "pd.merge(df1, df2, on='id')"
+        },
+        "join()": {
+          desc: "Joins using index.",
+          code: "df1.join(df2)"
+        },
+        "concat()": {
+          desc: "Concatenates DataFrames.",
+          code: "pd.concat([df1, df2])"
+        },
+        "append()": {
+          desc: "Appends rows (deprecated).",
+          code: "df1.append(df2)"
+        },
+        "insert()": {
+          desc: "Inserts column at position.",
+          code: "df.insert(1, 'new_col', value)"
+        },
+        "pop()": {
+          desc: "Removes and returns column.",
+          code: "df.pop('col')"
+        },
+        "update()": {
+          desc: "Updates values with another DataFrame.",
+          code: "df.update(df2)"
+        },
+        "sample()": {
+          desc: "Returns random sample rows.",
+          code: "df.sample(3)"
+        },
+        "nlargest()": {
+          desc: "Top n largest values.",
+          code: "df.nlargest(5, 'col')"
+        },
+        "nsmallest()": {
+          desc: "Top n smallest values.",
+          code: "df.nsmallest(5, 'col')"
+        },
+        "query()": {
+          desc: "Filters using query string.",
+          code: "df.query('age > 25')"
+        },
+        "eval()": {
+          desc: "Evaluates a string expression.",
+          code: "df.eval('total = col1 + col2')"
+        },
+        "corr()": {
+          desc: "Computes correlation.",
+          code: "df.corr()"
+        },
+        "cov()": {
+          desc: "Computes covariance.",
+          code: "df.cov()"
+        },
+        "mean()": {
+          desc: "Returns mean of columns.",
+          code: "df.mean()"
+        },
+        "median()": {
+          desc: "Returns median.",
+          code: "df.median()"
+        },
+        "mode()": {
+          desc: "Returns mode.",
+          code: "df.mode()"
+        },
+        "min()": {
+          desc: "Minimum values.",
+          code: "df.min()"
+        },
+        "max()": {
+          desc: "Maximum values.",
+          code: "df.max()"
+        },
+        "sum()": {
+          desc: "Sum of values.",
+          code: "df.sum()"
+        },
+        "std()": {
+          desc: "Standard deviation.",
+          code: "df.std()"
+        },
+        "var()": {
+          desc: "Variance of values.",
+          code: "df.var()"
+        },
+        "count()": {
+          desc: "Count of non-NA values.",
+          code: "df.count()"
+        },
+        "cumsum()": {
+          desc: "Cumulative sum.",
+          code: "df.cumsum()"
+        },
+        "cumprod()": {
+          desc: "Cumulative product.",
+          code: "df.cumprod()"
+        },
+        "diff()": {
+          desc: "Difference of values.",
+          code: "df.diff()"
+        },
+        "rank()": {
+          desc: "Ranks values.",
+          code: "df.rank()"
+        },
+        "clip()": {
+          desc: "Limits values between bounds.",
+          code: "df.clip(lower=0, upper=100)"
+        },
+        "aggregate()": {
+          desc: "Applies one or more operations.",
+          code: "df.aggregate(['sum', 'min'])"
+        },
+        "transform()": {
+          desc: "Applies function to each group.",
+          code: "df.transform(lambda x: x + 1)"
+        },
+        "plot()": {
+          desc: "Plots the DataFrame using matplotlib.",
+          code: "df.plot()"
+        }
+      },
+     numpy: {
+  "array()": {
+    desc: "Creates a numpy array.",
+    code: "np.array([1, 2, 3])"
+  },
+  "zeros()": {
+    desc: "Returns a new array of given shape and type, filled with zeros.",
+    code: "np.zeros((3, 4))"
+  },
+  "ones()": {
+    desc: "Returns a new array of given shape and type, filled with ones.",
+    code: "np.ones((2, 2))"
+  },
+  "eye()": {
+    desc: "Returns a 2-D identity matrix.",
+    code: "np.eye(3)"
+  },
+  "arange()": {
+    desc: "Returns evenly spaced values within a given interval.",
+    code: "np.arange(0, 10, 2)"
+  },
+  "linspace()": {
+    desc: "Returns evenly spaced numbers over a specified interval.",
+    code: "np.linspace(0, 1, 5)"
+  },
+  "reshape()": {
+    desc: "Gives a new shape to an array without changing its data.",
+    code: "np.array([1,2,3,4]).reshape((2,2))"
+  },
+  "ravel()": {
+    desc: "Returns a contiguous flattened array.",
+    code: "np.array([[1, 2], [3, 4]]).ravel()"
+  },
+  "flatten()": {
+    desc: "Returns a copy of the array collapsed into one dimension.",
+    code: "np.array([[1,2],[3,4]]).flatten()"
+  },
+  "transpose()": {
+    desc: "Permutes the dimensions of an array.",
+    code: "np.array([[1,2],[3,4]]).transpose()"
+  },
+  "concatenate()": {
+    desc: "Joins a sequence of arrays along an existing axis.",
+    code: "np.concatenate(([1, 2], [3, 4]))"
+  },
+  "stack()": {
+    desc: "Joins a sequence of arrays along a new axis.",
+    code: "np.stack((a, b), axis=0)"
+  },
+  "vstack()": {
+    desc: "Stacks arrays in sequence vertically (row wise).",
+    code: "np.vstack((a, b))"
+  },
+  "hstack()": {
+    desc: "Stacks arrays in sequence horizontally (column wise).",
+    code: "np.hstack((a, b))"
+  },
+  "split()": {
+    desc: "Splits an array into multiple sub-arrays.",
+    code: "np.split(np.array([1,2,3,4]), 2)"
+  },
+  "mean()": {
+    desc: "Computes the arithmetic mean.",
+    code: "np.mean(arr)"
+  },
+  "median()": {
+    desc: "Computes the median of the array elements.",
+    code: "np.median(arr)"
+  },
+  "std()": {
+    desc: "Computes the standard deviation.",
+    code: "np.std(arr)"
+  },
+  "var()": {
+    desc: "Computes the variance.",
+    code: "np.var(arr)"
+  },
+  "sum()": {
+    desc: "Sum of array elements.",
+    code: "np.sum(arr)"
+  },
+  "min()": {
+    desc: "Returns the minimum of an array or minimum along an axis.",
+    code: "np.min(arr)"
+  },
+  "max()": {
+    desc: "Returns the maximum of an array or maximum along an axis.",
+    code: "np.max(arr)"
+  },
+  "argmin()": {
+    desc: "Returns the indices of the minimum values.",
+    code: "np.argmin(arr)"
+  },
+  "argmax()": {
+    desc: "Returns the indices of the maximum values.",
+    code: "np.argmax(arr)"
+  },
+  "sort()": {
+    desc: "Returns a sorted copy of an array.",
+    code: "np.sort(arr)"
+  },
+  "argsort()": {
+    desc: "Returns the indices that would sort an array.",
+    code: "np.argsort(arr)"
+  },
+  "unique()": {
+    desc: "Finds the unique elements of an array.",
+    code: "np.unique(arr)"
+  },
+  "dot()": {
+    desc: "Dot product of two arrays.",
+    code: "np.dot(a, b)"
+  },
+  "matmul()": {
+    desc: "Matrix product of two arrays.",
+    code: "np.matmul(a, b)"
+  },
+  "random.rand()": {
+    desc: "Generates random values in a given shape.",
+    code: "np.random.rand(2, 2)"
+  },
+  "random.randint()": {
+    desc: "Generates random integers.",
+    code: "np.random.randint(0, 10, size=(2, 3))"
+  },
+  "random.randn()": {
+    desc: "Returns samples from the standard normal distribution.",
+    code: "np.random.randn(3, 3)"
+  }
+},
+      matplotlib: {
+  "plot()": {
+    desc: "Line chart of y vs x.",
+    code: "plt.plot([1, 2, 3], [4, 5, 6])"
+  },
+  "scatter()": {
+    desc: "Scatter plot.",
+    code: "plt.scatter(x, y)"
+  },
+  "bar()": {
+    desc: "Vertical bar chart.",
+    code: "plt.bar(['A', 'B'], [3, 7])"
+  },
+  "barh()": {
+    desc: "Horizontal bar chart.",
+    code: "plt.barh(['A', 'B'], [3, 7])"
+  },
+  "hist()": {
+    desc: "Histogram.",
+    code: "plt.hist(data)"
+  },
+  "boxplot()": {
+    desc: "Box and whisker plot.",
+    code: "plt.boxplot(data)"
+  },
+  "violinplot()": {
+    desc: "Violin plot (advanced boxplot).",
+    code: "plt.violinplot(data)"
+  },
+  "pie()": {
+    desc: "Pie chart.",
+    code: "plt.pie([10, 20, 30])"
+  },
+  "stem()": {
+    desc: "Stem plot.",
+    code: "plt.stem([1, 2, 3], [4, 5, 6])"
+  },
+  "step()": {
+    desc: "Step plot.",
+    code: "plt.step(x, y)"
+  },
+  "stackplot()": {
+    desc: "Stacked area chart.",
+    code: "plt.stackplot(x, y1, y2)"
+  },
+  "errorbar()": {
+    desc: "Plot with error bars.",
+    code: "plt.errorbar(x, y, yerr=error)"
+  },
+  "fill_between()": {
+    desc: "Fills area between curves.",
+    code: "plt.fill_between(x, y1, y2)"
+  },
+  "imshow()": {
+    desc: "Displays image data.",
+    code: "plt.imshow(image_array)"
+  },
+  "matshow()": {
+    desc: "Matrix display.",
+    code: "plt.matshow(matrix)"
+  },
+  "contour()": {
+    desc: "Contour lines.",
+    code: "plt.contour(X, Y, Z)"
+  },
+  "contourf()": {
+    desc: "Filled contours.",
+    code: "plt.contourf(X, Y, Z)"
+  },
+  "quiver()": {
+    desc: "Vector field arrows.",
+    code: "plt.quiver(X, Y, U, V)"
+  },
+  "streamplot()": {
+    desc: "Streamlines of vector field.",
+    code: "plt.streamplot(X, Y, U, V)"
+  },
+  "eventplot()": {
+    desc: "Sequence of events.",
+    code: "plt.eventplot(data)"
+  },
+  "hexbin()": {
+    desc: "Hexagonal binning plot.",
+    code: "plt.hexbin(x, y, gridsize=30)"
+  },
+  "spy()": {
+    desc: "Sparsity pattern of a matrix.",
+    code: "plt.spy(sparse_matrix)"
+  },
+  "table()": {
+    desc: "Adds a table to axes.",
+    code: "plt.table(cellText=data, colLabels=columns, loc='bottom')"
+  },
+  "xlabel()": {
+    desc: "Label for x-axis.",
+    code: "plt.xlabel('X Axis')"
+  },
+  "ylabel()": {
+    desc: "Label for y-axis.",
+    code: "plt.ylabel('Y Axis')"
+  },
+  "title()": {
+    desc: "Set the title.",
+    code: "plt.title('My Plot')"
+  },
+  "legend()": {
+    desc: "Display legend.",
+    code: "plt.legend(['Line 1'])"
+  },
+  "xlim()": {
+    desc: "Set limits for x-axis.",
+    code: "plt.xlim(0, 10)"
+  },
+  "ylim()": {
+    desc: "Set limits for y-axis.",
+    code: "plt.ylim(0, 100)"
+  },
+  "xticks()": {
+    desc: "Set x-tick labels.",
+    code: "plt.xticks([0, 1, 2], ['A', 'B', 'C'])"
+  },
+  "yticks()": {
+    desc: "Set y-tick labels.",
+    code: "plt.yticks([0, 1, 2], ['Low', 'Mid', 'High'])"
+  },
+  "grid()": {
+    desc: "Show grid lines.",
+    code: "plt.grid(True)"
+  },
+  "subplots()": {
+    desc: "Create multiple plots layout.",
+    code: "fig, ax = plt.subplots(2, 2)"
+  },
+  "subplot()": {
+    desc: "Select subplot position.",
+    code: "plt.subplot(2, 2, 1)"
+  },
+  "figure()": {
+    desc: "Creates new figure.",
+    code: "plt.figure(figsize=(8,6))"
+  },
+  "tight_layout()": {
+    desc: "Auto adjust subplot spacing.",
+    code: "plt.tight_layout()"
+  },
+  "savefig()": {
+    desc: "Saves the current figure.",
+    code: "plt.savefig('plot.png')"
+  },
+  "show()": {
+    desc: "Displays the figure.",
+    code: "plt.show()"
+  },
+  "close()": {
+    desc: "Closes the current figure.",
+    code: "plt.close()"
+  }
+},
+      seaborn: {
+  "lineplot()": {
+    desc: "Draws a line plot.",
+    code: "sns.lineplot(x='x', y='y', data=df)"
+  },
+  "scatterplot()": {
+    desc: "Draws a scatter plot.",
+    code: "sns.scatterplot(x='x', y='y', data=df)"
+  },
+  "histplot()": {
+    desc: "Draws a histogram.",
+    code: "sns.histplot(data=df['col'])"
+  },
+  "boxplot()": {
+    desc: "Draws a boxplot for distribution.",
+    code: "sns.boxplot(x='x', y='y', data=df)"
+  },
+  "violinplot()": {
+    desc: "Draws a violin plot.",
+    code: "sns.violinplot(x='x', y='y', data=df)"
+  },
+  "stripplot()": {
+    desc: "Draws a strip plot of scatter on a categorical axis.",
+    code: "sns.stripplot(x='x', y='y', data=df)"
+  },
+  "swarmplot()": {
+    desc: "Like stripplot but avoids overlapping.",
+    code: "sns.swarmplot(x='x', y='y', data=df)"
+  },
+  "barplot()": {
+    desc: "Draws a bar plot with aggregate values.",
+    code: "sns.barplot(x='x', y='y', data=df)"
+  },
+  "countplot()": {
+    desc: "Shows count of observations in each category.",
+    code: "sns.countplot(x='category', data=df)"
+  },
+  "pointplot()": {
+    desc: "Show point estimates and CIs.",
+    code: "sns.pointplot(x='x', y='y', data=df)"
+  },
+  "catplot()": {
+    desc: "Categorical plot combining strip, box, etc.",
+    code: "sns.catplot(x='x', y='y', kind='box', data=df)"
+  },
+  "pairplot()": {
+    desc: "Plot pairwise relationships in dataset.",
+    code: "sns.pairplot(df)"
+  },
+  "jointplot()": {
+    desc: "Draws bivariate plots with marginal histograms.",
+    code: "sns.jointplot(x='x', y='y', data=df)"
+  },
+  "heatmap()": {
+    desc: "Draws a heatmap from a matrix.",
+    code: "sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')"
+  },
+  "clustermap()": {
+    desc: "Plots a matrix dataset as a hierarchical cluster map.",
+    code: "sns.clustermap(data)"
+  },
+  "lmplot()": {
+    desc: "Fits and plots regression model.",
+    code: "sns.lmplot(x='x', y='y', data=df)"
+  },
+  "residplot()": {
+    desc: "Plots residuals of a linear regression.",
+    code: "sns.residplot(x='x', y='y', data=df)"
+  },
+  "regplot()": {
+    desc: "Plot data and linear regression model fit.",
+    code: "sns.regplot(x='x', y='y', data=df)"
+  },
+  "set()": {
+    desc: "Sets the theme of the plots.",
+    code: "sns.set(style='whitegrid')"
+  },
+  "set_style()": {
+    desc: "Sets background style.",
+    code: "sns.set_style('darkgrid')"
+  },
+  "set_context()": {
+    desc: "Sets context like paper, notebook, talk.",
+    code: "sns.set_context('notebook')"
+  },
+  "set_palette()": {
+    desc: "Sets color palette.",
+    code: "sns.set_palette('pastel')"
+  },
+  "despine()": {
+    desc: "Removes top/right axis lines.",
+    code: "sns.despine()"
+  }
+}
+};
+
+    function showLibrary(lib, btn) {
+      document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.library-content').forEach(div => div.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(lib).classList.add('active');
+    }
+
+    function renderLibrary(libId, methods) {
+      const container = document.getElementById(libId);
+      for (const method in methods) {
+        const details = document.createElement("details");
+        const summary = document.createElement("summary");
+        summary.textContent = method;
+        const desc = document.createElement("p");
+        desc.textContent = methods[method].desc;
+        const code = document.createElement("pre");
+        code.textContent = methods[method].code;
+        details.appendChild(summary);
+        details.appendChild(desc);
+        details.appendChild(code);
+        container.appendChild(details);
+      }
+    }
+
+    // Initialize all libraries on page load
+    for (const lib in libraries) {
+      renderLibrary(lib, libraries[lib]);
+    }
+  </script>
+
+<br />
+<br />
+<section class="faq-section">
+  <h2>Frequently Asked Questions (FAQs)</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">What is NumPy used for?</button>
+    <div class="faq-answer">
+      <p>NumPy is a Python library used for numerical computations and working with arrays efficiently.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">How do I create a NumPy array?</button>
+    <div class="faq-answer">
+      <p>You can create a NumPy array using <code>np.array()</code> function by passing a list or tuple.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">What is the difference between np.zeros() and np.ones()?</button>
+    <div class="faq-answer">
+      <p><code>np.zeros()</code> creates an array filled with zeros, while <code>np.ones()</code> creates an array filled with ones.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">How to generate random numbers in NumPy?</button>
+    <div class="faq-answer">
+      <p>Use the <code>np.random</code> module, like <code>np.random.rand()</code> or <code>np.random.randint()</code> to generate random numbers.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">What is broadcasting in NumPy?</button>
+    <div class="faq-answer">
+      <p>Broadcasting allows NumPy to perform arithmetic operations on arrays of different shapes efficiently.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">How to calculate the mean of an array?</button>
+    <div class="faq-answer">
+      <p>You can use <code>np.mean()</code> to compute the average value of array elements.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">What are the advantages of using NumPy over Python lists?</button>
+    <div class="faq-answer">
+      <p>NumPy arrays are faster, consume less memory, and provide many built-in mathematical functions compared to Python lists.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">How to perform matrix multiplication in NumPy?</button>
+    <div class="faq-answer">
+      <p>Use <code>np.dot()</code> or the <code>@</code> operator for matrix multiplication.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">What is the difference between np.array() and np.asarray()?</button>
+    <div class="faq-answer">
+      <p><code>np.array()</code> always copies the input data, while <code>np.asarray()</code> avoids copying if the input is already an array.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">How do I save and load NumPy arrays?</button>
+    <div class="faq-answer">
+      <p>Use <code>np.save()</code> to save and <code>np.load()</code> to load arrays from disk.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">What is a masked array in NumPy?</button>
+    <div class="faq-answer">
+      <p>A masked array allows you to mask or ignore certain elements during computations.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">How do I find the index of the maximum element?</button>
+    <div class="faq-answer">
+      <p>Use <code>np.argmax()</code> to get the index of the maximum value in an array.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">Can I perform element-wise operations on arrays?</button>
+    <div class="faq-answer">
+      <p>Yes, NumPy supports element-wise operations like addition, subtraction, multiplication, and division directly.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">How do I reshape an array?</button>
+    <div class="faq-answer">
+      <p>Use <code>np.reshape()</code> to change the shape of an array without changing its data.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">What is the use of np.linspace()?</button>
+    <div class="faq-answer">
+      <p><code>np.linspace()</code> generates evenly spaced numbers over a specified interval.</p>
+    </div>
+  </div>
+
+    <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">How to handle missing data in NumPy arrays?</button>
+    <div class="faq-answer">
+      <p>You can use masked arrays or NumPy’s <code>nan</code> handling functions like <code>np.isnan()</code>.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">How can I sort a NumPy array?</button>
+    <div class="faq-answer">
+      <p>Use <code>np.sort()</code> to sort the elements of an array.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">What is the difference between np.random.rand() and np.random.randn()?</button>
+    <div class="faq-answer">
+      <p><code>np.random.rand()</code> generates uniform random values in [0,1), while <code>np.random.randn()</code> generates samples from the standard normal distribution.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">Can NumPy be used for machine learning?</button>
+    <div class="faq-answer">
+      <p>Yes, NumPy is foundational for machine learning libraries like scikit-learn, TensorFlow, and PyTorch.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFAQ(this)">How to calculate the dot product of two arrays?</button>
+    <div class="faq-answer">
+      <p>Use <code>np.dot()</code> function to calculate the dot product of two arrays.</p>
+    </div>
+  </div>
+</section>
+
+
+  <script>
+    function toggle(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === "block") ? "none" : "block";
+    }
+    function toggleMenu() {
+      const mobileNav = document.getElementById('mobileNav');
+      mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+    }
+    function toggleFAQ(button) {
+    const answer = button.nextElementSibling;
+    if (answer.style.display === "block") {
+      answer.style.display = "none";
+    } else {
+      answer.style.display = "block";
+    }
+  }
+  </script>
+</body>
+<footer>
+  <div class="footer-content">
+    <div>
+      <h3>Follow Us</h3>
+      <ul>
+        <li><a href="https://youtube.com/" target="_blank">📺 YouTube</a></li>
+        <li><a href="https://instagram.com/" target="_blank">📸 Instagram</a></li>
+        <li><a href="https://facebook.com/" target="_blank">📘 Facebook</a></li>
+        <li><a href="https://github.com/" target="_blank">💻 GitHub</a></li>
+        <li><a href="https://t.me/" target="_blank">📲 Telegram</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Useful References</h3>
+      <ul>
+        <li><a href="https://numpy.org/doc/">NumPy Docs</a></li>
+        <li><a href="https://pandas.pydata.org/">Pandas</a></li>
+        <li><a href="https://scikit-learn.org/">Scikit-learn</a></li>
+        <li><a href="https://matplotlib.org/">Matplotlib</a></li>
+        <li><a href="https://www.tensorflow.org/">TensorFlow</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Syist Group</h3>
+      <ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms & Conditions</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Syist Group. All rights reserved.
+  </div>
+</footer>
+</html>
