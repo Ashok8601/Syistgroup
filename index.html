@@ -500,634 +500,221 @@
 </head>
   <!-- Styles -->
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; background: #f3f6fb; color: #222; }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
 
-    header {
-      background: #1e1e2f;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      padding: 15px 20px;
-      align-items: center;
-    }
+    body{background:#fdfdfd;color:#333;line-height:1.6;}
 
-    .logo { font-size: 22px; font-weight: bold; }
-
+    /* Navbar */
     nav {
-      display: flex;
-      gap: 15px;
+      position:fixed;top:0;left:0;width:100%;
+      background:#1e1e2f;color:#fff;
+      display:flex;justify-content:space-between;align-items:center;
+      padding:12px 20px;z-index:1000;
+    }
+    nav .logo {font-size:1.4em;font-weight:bold;letter-spacing:1px;}
+    nav ul {list-style:none;display:flex;gap:20px;}
+    nav ul li a {color:#fff;text-decoration:none;font-weight:500;transition:.3s;}
+    nav ul li a:hover {color:#ff9800;}
+    .hamburger{display:none;flex-direction:column;cursor:pointer;}
+    .hamburger div{width:25px;height:3px;background:#fff;margin:4px 0;}
+
+    /* Search Bar */
+    .search-wrapper {
+      margin-top:70px;
+      display:flex;justify-content:center;
+      padding:20px;
+    }
+    .search-bar {
+      width:60%;
+      padding:12px 20px;
+      border-radius:30px;
+      border:none;outline:none;
+      font-size:1em;
+      background:rgba(255,255,255,0.8);
+      box-shadow:0 4px 20px rgba(0,0,0,0.15);
+      backdrop-filter:blur(6px);
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 15px;
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 26px;
-      cursor: pointer;
-    }
-
+    /* Hero */
     .hero {
-      background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
-      text-align: center;
-      padding: 80px 20px;
+      text-align:center;
+      padding:60px 20px;
+      background:linear-gradient(to right,#ff9800,#ff5722);
+      color:#fff;
+    }
+    .hero h1{font-size:2em;margin-bottom:15px;}
+    .hero p{margin-bottom:25px;font-size:1.1em;}
+    .hero a{
+      display:inline-block;padding:12px 25px;
+      background:#fff;color:#ff5722;font-weight:bold;
+      border-radius:25px;text-decoration:none;transition:.3s;
+    }
+    .hero a:hover{background:#ffe0b2;}
+
+    /* Sections */
+    section {padding:40px 20px;}
+    h2 {margin-bottom:20px;text-align:center;color:#ff5722;}
+
+    /* Cards */
+    .card-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+    .card {
+      background:#fff;padding:20px;border-radius:10px;
+      box-shadow:0 4px 15px rgba(0,0,0,0.1);
+      transition:.3s;
+    }
+    .card:hover {transform:translateY(-5px);}
+
+    /* Marquee */
+    .marquee {
+      margin:40px 0;overflow:hidden;position:relative;
+      background:linear-gradient(135deg,#1e1e2f,#3f3d56);
+      padding:20px 0;
+    }
+    .marquee-content {display:flex;gap:25px;animation:scroll 25s linear infinite;}
+    @keyframes scroll{0%{transform:translateX(100%);}100%{transform:translateX(-100%);}}
+    .circle {
+      min-width:80px;height:80px;border-radius:50%;
+      background:#ff9800;display:flex;justify-content:center;align-items:center;
+      font-size:.9em;font-weight:bold;color:#fff;
+      box-shadow:0 4px 10px rgba(0,0,0,0.2);flex-shrink:0;
     }
 
-    .hero h1 {
-      font-size: 48px;
-      color: #d0f0ff; /* Bright Silver Blue */
-      text-shadow: 1px 1px 3px #000;
+    /* Footer */
+    footer {
+      background:#1e1e2f;color:#fff;text-align:center;padding:30px 20px;margin-top:30px;
     }
+    footer a{color:#ff9800;text-decoration:none;margin:0 10px;}
 
-    .hero p {
-      color: #e3f4ff;
-      font-size: 20px;
-      margin: 10px auto;
-      max-width: 700px;
-      text-shadow: 1px 1px 2px #000;
-    }
-
-    .btn-primary {
-      margin-top: 20px;
-      background: #ff5722;
-      color: white;
-      padding: 12px 24px;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    .section {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .section h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
-      color: #1e1e2f;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 10px;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
-    .project-card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.2);
-    }
-
-    .project-card h3 {
-      color: #0052cc;
-      margin-bottom: 10px;
-    }
-
-    .project-card p {
-      font-size: 15px;
-      line-height: 1.5;
-      color: #333;
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle { display: block; }
-      nav {
-        display: none;
-        flex-direction: column;
-        background: #1e1e2f;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        text-align: center;
-      }
-      nav.show { display: flex; }
-      nav a { padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.1); }
-    }
-    .review-section {
-  background: #f5faff;
-  padding: 50px 20px;
-  text-align: center;
-}
-
-.review-title {
-  font-size: 2rem;
-  color: #005f99;
-  margin-bottom: 30px;
-}
-
-.reviews {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.review-card {
-  background: white;
-  border-radius: 16px;
-  padding: 20px;
-  width: 300px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.review-card:hover {
-  transform: translateY(-5px);
-}
-
-.review-card p {
-  font-style: italic;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.review-card h4 {
-  color: #007acc;
-  font-weight: bold;
-}
-
-.hidden {
-  display: none;
-}
-
-.show-more-btn {
-  margin-top: 30px;
-  padding: 10px 25px;
-  font-size: 1rem;
-  background: #007acc;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.show-more-btn:hover {
-  background: #005f99;
-}
-.site-footer {
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  color: #dcdcdc;
-  padding: 60px 20px 20px;
-  font-family: 'Segoe UI', sans-serif;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-}
-
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-about, .footer-links, .footer-social {
-  flex: 1 1 250px;
-}
-
-.footer-about h2 {
-  color: #61dafb;
-  font-size: 28px;
-}
-
-.footer-about p {
-  line-height: 1.7;
-  font-size: 15px;
-}
-
-.footer-links h3,
-.footer-social h3 {
-  margin-bottom: 12px;
-  font-size: 18px;
-  color: #ffffff;
-}
-
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-links ul li a {
-  color: #dcdcdc;
-  text-decoration: none;
-  line-height: 2;
-  transition: color 0.3s ease;
-}
-
-.footer-links ul li a:hover {
-  color: #61dafb;
-}
-
-.social-icons a {
-  display: inline-block;
-  margin-right: 10px;
-  color: #dcdcdc;
-  font-size: 20px;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.social-icons a:hover {
-  color: #61dafb;
-  transform: scale(1.2);
-}
-
-.footer-bottom {
-  text-align: center;
-  padding: 20px 0 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 14px;
-  color: #aaa;
-}
-    .page-reference-section {
-      background: #f2f6fc;
-      padding: 10px 0;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .reference-slider {
-      display: flex;
-      width: max-content;
-      animation: scrollReference 40s linear infinite;
-    }
-
-    .reference-track {
-      display: flex;
-      gap: 50px;
-    }
-
-    .reference-item {
-      display: inline-block;
-      font-size: 18px;
-      color: #005eff;
-      background-color: #ffffff;
-      padding: 10px 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      text-decoration: none;
-      white-space: nowrap;
-      transition: transform 0.3s ease;
-    }
-
-    .reference-item:hover {
-      transform: scale(1.1);
-      background: #e6f0ff;
-    }
-
-    @keyframes scrollReference {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
+    /* Responsive */
+    @media(max-width:768px){
+      nav ul{display:none;flex-direction:column;background:#1e1e2f;position:absolute;top:60px;right:0;width:200px;padding:20px;}
+      nav ul.active{display:flex;}
+      .hamburger{display:flex;}
+      .search-bar{width:85%;}
+      .hero h1{font-size:1.6em;}
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo">Syist Group</div>
-    <div class="menu-toggle">&#9776;</div>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/python">Python</a>
-      <a href="/ml">Machine Learning</a>
-      <a href="/dl">Deep Learning</a>
-      <a href="/Project">Interview Projects</a>
-      <!-- Direct link to static file -->
-<a href="static/rojgarhunt.apk" download>
-    Download Rojgarhunt App
-</a>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">SyistCode</div>
+    <ul>
+      <li><a href="#notes">Notes</a></li>
+      <li><a href="#interview">Interview</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#frameworks">Frameworks</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#login">Sign Up / Login</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div><div></div><div></div>
+    </div>
+  </nav>
 
-    </nav>
-  </header>
-
-  <div class="hero">
-    <h1>Learn Coding in Hindi – Syist Group</h1>
-    <p>Step-by-step Python, AI, and Web Development courses with real projects – भारत का सबसे अच्छा कोडिंग प्लेटफ़ॉर्म</p>
-    <a href="/signup" class="btn-primary">Start Learning</a>
+  <!-- Search Bar -->
+  <div class="search-wrapper">
+    <input type="text" class="search-bar" placeholder="Search Notes, Projects, Frameworks...">
   </div>
 
-  <section class="section" id="projects">
-    <h2>Our Projects</h2>
-    <div class="project-grid">
+  <!-- Hero -->
+  <section class="hero">
+    <h1>MASTER THE ENTIRE PYTHON ECOSYSTEM</h1>
+    <p>Your ultimate resource for Notes, PDFs, Interview Questions, Projects, DL, ML & AI</p>
+    <a href="#start">START LEARNING NOW</a>
+  </section>
 
-      <div class="project-card">
-        <h3>Rojgar Setu – Job Connectivity App</h3>
-        <p>Rojgar Setu एक भारत-स्तरीय जॉब प्लेटफॉर्म है जो श्रमिकों और नियोक्ताओं को जोड़ता है। यूज़र्स जॉब पोस्ट कर सकते हैं, प्रोफ़ाइल बना सकते हैं, और स्थान के अनुसार रोजगार खोज सकते हैं। Django backend और SQLite के साथ बनाया गया है, साथ ही मोबाइल यूजर के लिए फास्ट UI भी तैयार किया गया है। इसका लक्ष्य लाखों अनस्किल्ड और सेमी-स्किल्ड वर्कर्स को डिजिटल रूप से empower करना है।</p>
-      </div>
-
-      <div class="project-card">
-        <h3>Resume Builder using Flask</h3>
-        <p>यह प्रोजेक्ट एक automated resume generator है जो यूज़र से input लेकर predefined templates में PDF बनाता है। Flask backend और HTML templates के साथ develop किया गया यह tool नौजवानों को इंटरव्यू के लिए instantly resume बनाने में मदद करता है। इसमें login/signup, multiple template choice और preview सिस्टम शामिल हैं।</p>
-      </div>
-
-      <div class="project-card">
-        <h3>Chat Application (WhatsApp Clone)</h3>
-        <p>यह real-time chat application Flask और WebSockets का उपयोग करता है। इसमें user authentication, profile image, message timestamp, और call/attachment जैसे फ़ीचर उपलब्ध हैं। UI को WhatsApp जैसा रखा गया है लेकिन इसे fully responsive बनाया गया है ताकि सभी devices पर काम करे। SQLite इसका backend database है।</p>
-      </div>
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7118906317863823"
-     crossorigin="anonymous"></script>
-<!-- New_ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7118906317863823"
-     data-ad-slot="2850513638"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-      <div class="project-card">
-        <h3>E-commerce Website</h3>
-        <p>यह एक पूर्णतः कार्यशील shopping platform है जहाँ उपयोगकर्ता product देख सकते हैं, cart में जोड़ सकते हैं, और खरीद सकते हैं। Flask और SQLite3 पर बना यह सिस्टम backend admin panel और payment gateway integration के साथ तैयार किया गया है। इसमें responsive UI और dynamic routing system भी शामिल हैं।</p>
-      </div>
-
-      <div class="project-card">
-        <h3>Weather App (JavaScript)</h3>
-        <p>यह एक सरल लेकिन प्रभावी मौसम एप्लिकेशन है जो OpenWeatherMap API से लाइव डेटा लाता है। User अपने शहर का नाम डालकर तुरंत temperature, humidity और weather condition देख सकता है। Pure JavaScript, HTML और CSS का उपयोग करके बना यह app beginner के लिए best प्रोजेक्ट है।</p>
-      </div>
-
-      <div class="project-card">
-        <h3>AI-Powered Code Explainer</h3>
-        <p>यह टूल किसी भी Python code को natural language में explain करता है। इसमें OpenAI API के माध्यम से AI का प्रयोग किया गया है। उपयोगकर्ता अपना code डालता है और हिंदी में explanation प्राप्त करता है। इसका उपयोग students और developers debug और learning के लिए करते हैं।</p>
-      </div>
-
+  <!-- Notes -->
+  <section id="notes">
+    <h2>Comprehensive Notes</h2>
+    <div class="card-grid">
+      <div class="card">Downloadable guides on Core Python, DS, Algorithms</div>
+      <div class="card">PDF notes with examples & explanations</div>
     </div>
   </section>
-<section class="review-section">
-  <h2 class="review-title">What Our Learners Say</h2>
-  <div class="reviews" id="reviewContainer">
-    <div class="review-card">
-      <p>"SyistGroup helped me master Python easily. Their structured content is a blessing!"</p>
-      <h4>- Aayush Raj</h4>
-    </div>
-    <div class="review-card">
-      <p>"I landed an internship after following the projects. Truly industry-ready resources."</p>
-      <h4>- Sneha Sharma</h4>
-    </div>
-    <div class="review-card">
-      <p>"Best platform for self-learners. Clean UI, detailed explanations, and real-world projects."</p>
-      <h4>- Kunal Joshi</h4>
-    </div>
-    <div class="review-card">
-      <p>"Their ML & DL sections are incredible. I built my own AI model after following their guide."</p>
-      <h4>- Meera Verma</h4>
-    </div>
-    <div class="review-card hidden">
-      <p>"I built a portfolio and got freelance work. All credit goes to the SyistGroup tutorials."</p>
-      <h4>- Rajeev Thakur</h4>
-    </div>
-    <div class="review-card hidden">
-      <p>"I was a beginner. Now I can build full-stack apps confidently. Thanks to this website!"</p>
-      <h4>- Neha Kulkarni</h4>
-    </div>
-    <div class="review-card hidden">
-      <p>"The content quality is better than paid platforms. And it’s all free."</p>
-      <h4>- Ankit Kumar</h4>
-    </div>
-    <div class="review-card hidden">
-      <p>"Their explanation is simple, examples are practical. Learned React & Django from here."</p>
-      <h4>- Sanya Mehra</h4>
-    </div>
-    <div class="review-card hidden">
-      <p>"I improved my resume using their Resume Maker project. Very practical!"</p>
-      <h4>- Harsh Vardhan</h4>
-    </div>
-    <div class="review-card hidden">
-      <p>"Thanks to SyistGroup, I cracked interviews by showcasing projects from this site."</p>
-      <h4>- Jyoti Patel</h4>
-    </div>
-    <div class="review-card hidden">
-      <p>"Even complex topics like Data Structures were made easy through their tutorials."</p>
-      <h4>- Arjun Rana</h4>
-    </div>
-    <div class="review-card hidden">
-      <p>"This site is a goldmine for learners. Thank you for the amazing content."</p>
-      <h4>- Pratiksha Reddy</h4>
-    </div>
-  </div>
-  <button class="show-more-btn" onclick="showMoreReviews()">Show More Reviews</button>
-  
-  <section class="page-reference-section">
-    <div class="reference-slider">
-      <div class="reference-track">
-        <a href="/trading.html" class="reference-item">📚 Learn Trading – Beginner to Pro</a>
-        <a href="/today-in-bharat.html" class="reference-item">🇮🇳 Today in Bharat – Latest News</a>
-        <a href="/python-course.html" class="reference-item">🚀 Start with Python in 30 Days</a>
-        <a href="/cpp-career.html" class="reference-item">💼 Career with C++ & Projects</a>
-        <a href="/cyber-security.html" class="reference-item">🔐 Cyber Security for Beginners</a>
-        <a href="/deep-learning.html" class="reference-item">🧠 Introduction to Deep Learning</a>
-        <a href="/create-website.html" class="reference-item">🌐 Create a Website using HTML/CSS</a>
-        <a href="/ai-in-life.html" class="reference-item">🤖 AI in Daily Life Explained</a>
-        <a href="/stock-predictor.html" class="reference-item">📊 Stock Market Prediction Project</a>
-        <a href="/game-js.html" class="reference-item">🎮 Game Development with JS</a>
-        <a href="/react-native-app.html" class="reference-item">📱 Android App with React Native</a>
-        <a href="/git-github.html" class="reference-item">⚙️ How Git & GitHub Works</a>
-        <a href="/seo-2025.html" class="reference-item">🔎 SEO in 2025 – Latest Trends</a>
-        <a href="/resume-ai.html" class="reference-item">📑 Resume Builder AI</a>
-        <a href="/projects-directory.html" class="reference-item">🧭 Explore Our Projects Directory</a>
-      </div>
 
-      <!-- Duplicate track for seamless loop -->
-      <div class="reference-track">
-        <a href="/trading.html" class="reference-item">📚 Learn Trading – Beginner to Pro</a>
-        <a href="/today-in-bharat.html" class="reference-item">🇮🇳 Today in Bharat – Latest News</a>
-        <a href="/python-course.html" class="reference-item">🚀 Start with Python in 30 Days</a>
-        <a href="/cpp-career.html" class="reference-item">💼 Career with C++ & Projects</a>
-        <a href="/cyber-security.html" class="reference-item">🔐 Cyber Security for Beginners</a>
-        <a href="/deep-learning.html" class="reference-item">🧠 Introduction to Deep Learning</a>
-        <a href="/create-website.html" class="reference-item">🌐 Create a Website using HTML/CSS</a>
-        <a href="/ai-in-life.html" class="reference-item">🤖 AI in Daily Life Explained</a>
-        <a href="/stock-predictor.html" class="reference-item">📊 Stock Market Prediction Project</a>
-        <a href="/game-js.html" class="reference-item">🎮 Game Development with JS</a>
-        <a href="/react-native-app.html" class="reference-item">📱 Android App with React Native</a>
-        <a href="/git-github.html" class="reference-item">⚙️ How Git & GitHub Works</a>
-        <a href="/seo-2025.html" class="reference-item">🔎 SEO in 2025 – Latest Trends</a>
-        <a href="/resume-ai.html" class="reference-item">📑 Resume Builder AI</a>
-        <a href="/projects-directory.html" class="reference-item">🧭 Explore Our Projects Directory</a>
-      </div>
+  <!-- Interview -->
+  <section id="interview">
+    <h2>Interview Questions</h2>
+    <div class="card-grid">
+      <div class="card">Top interview Q&A with detailed answers</div>
+      <div class="card">Company-specific practice sets</div>
     </div>
   </section>
-  <section id="faq" style="max-width:800px; margin:auto; font-family: Arial, sans-serif; padding:20px;">
-  <h2 style="text-align:center; color:#2c3e50; margin-bottom:30px;">Frequently Asked Questions (FAQ)</h2>
 
-  <div class="faq-item" style="margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px;">
-    <h3 style="color:#34495e; font-size:18px; margin-bottom:8px;">1. What is the best Python full course for beginners covering coding and DSA?</h3>
-    <p style="color:#555; line-height:1.5;">The best Python full course for beginners covers fundamental Python programming, hands-on coding exercises, and data structures and algorithms (DSA) to build a strong foundation.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px;">
-    <h3 style="color:#34495e; font-size:18px; margin-bottom:8px;">2. How can I learn Python DSA effectively using real Python code examples?</h3>
-    <p style="color:#555; line-height:1.5;">Practice Python DSA problems on platforms like LeetCode and HackerRank, where you can study and solve challenges with Python code involving lists, tuples, trees, and sorting algorithms.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px;">
-    <h3 style="color:#34495e; font-size:18px; margin-bottom:8px;">3. Are there Python full courses that include ethical hacking tutorials for beginners?</h3>
-    <p style="color:#555; line-height:1.5;">Yes, some Python full courses offer modules on ethical hacking, teaching you how to write Python scripts for network scanning, vulnerability analysis, and penetration testing.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px;">
-    <h3 style="color:#34495e; font-size:18px; margin-bottom:8px;">4. How is Python used in machine learning and deep learning projects?</h3>
-    <p style="color:#555; line-height:1.5;">Python is the primary language for machine learning and deep learning due to libraries like scikit-learn, TensorFlow, and PyTorch, which help build, train, and deploy models efficiently.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px;">
-    <h3 style="color:#34495e; font-size:18px; margin-bottom:8px;">5. What are some beginner-friendly Python coding projects in machine learning?</h3>
-    <p style="color:#555; line-height:1.5;">Projects like house price prediction, image classification, and spam detection are great Python coding projects for beginners interested in machine learning.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px;">
-    <h3 style="color:#34495e; font-size:18px; margin-bottom:8px;">6. What is the difference between Python lists and tuples in data structures?</h3>
-    <p style="color:#555; line-height:1.5;">Python lists are mutable, allowing modification, whereas tuples are immutable and provide faster performance, making them suitable for fixed data collections.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px;">
-    <h3 style="color:#34495e; font-size:18px; margin-bottom:8px;">7. Which Python DSA interview questions are commonly asked?</h3>
-    <p style="color:#555; line-height:1.5;">Interviewers often ask about implementing linked lists, binary trees, sorting algorithms, and dynamic programming problems using Python code.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px;">
-    <h3 style="color:#34495e; font-size:18px; margin-bottom:8px;">8. Can Python be used for hacking and cybersecurity?</h3>
-    <p style="color:#555; line-height:1.5;">Yes, Python is widely used in ethical hacking for writing tools and scripts related to network scanning, penetration testing, and vulnerability assessment.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px;">
-    <h3 style="color:#34495e; font-size:18px; margin-bottom:8px;">9. How do I start with deep learning in Python?</h3>
-    <p style="color:#555; line-height:1.5;">Start deep learning by learning neural networks and using Python libraries such as TensorFlow or Keras to build and train models.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px;">
-    <h3 style="color:#34495e; font-size:18px; margin-bottom:8px;">10. What Python coding skills are needed for machine learning roles?</h3>
-    <p style="color:#555; line-height:1.5;">Proficiency in Python programming, understanding of data structures, knowledge of ML libraries, and experience with data preprocessing and model evaluation are essential.</p>
-  </div>
-
-  <!-- Add remaining FAQ items similarly -->
-
-  <div class="faq-item" style="margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px;">
-    <h3 style="color:#34495e; font-size:18px; margin-bottom:8px;">11. Is Python good for beginners learning programming and DSA?</h3>
-    <p style="color:#555; line-height:1.5;">Absolutely! Python's simple syntax and rich libraries make it ideal for beginners to learn programming fundamentals and data structures & algorithms.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px;">
-    <h3 style="color:#34495e; font-size:18px; margin-bottom:8px;">12. What are some practical Python hacking projects for beginners?</h3>
-    <p style="color:#555; line-height:1.5;">Beginner hacking projects include creating port scanners, packet sniffers, and password crackers using Python scripts.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px;">
-    <h3 style="color:#34495e; font-size:18px; margin-bottom:8px;">13. How can I use Python lists and tuples in coding projects?</h3>
-    <p style="color:#555; line-height:1.5;">Python lists and tuples are used to store collections of data; lists are preferred when you need to modify data, while tuples are better for fixed datasets.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px;">
-    <h3 style="color:#34495e; font-size:18px; margin-bottom:8px;">14. Which machine learning algorithms should I implement with Python code?</h3>
-    <p style="color:#555; line-height:1.5;">Start with linear regression, decision trees, support vector machines, and clustering algorithms using Python for hands-on ML experience.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px;">
-    <h3 style="color:#34495e; font-size:18px; margin-bottom:8px;">15. How does Python help in data science and deep learning?</h3>
-    <p style="color:#555; line-height:1.5;">Python offers libraries and frameworks that simplify data analysis, visualization, and building deep learning models efficiently.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px;">
-    <h3 style="color:#34495e; font-size:18px; margin-bottom:8px;">16. Can I learn hacking with a Python full course?</h3>
-    <p style="color:#555; line-height:1.5;">Some Python full courses include ethical hacking to teach security concepts and how to write hacking scripts responsibly.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px;">
-    <h3 style="color:#34495e; font-size:18px; margin-bottom:8px;">17. What are the benefits of learning Python coding for AI and ML?</h3>
-    <p style="color:#555; line-height:1.5;">Python provides easy syntax, extensive libraries, and strong community support, making it the top choice for AI and ML development.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px;">
-    <h3 style="color:#34495e; font-size:18px; margin-bottom:8px;">18. Are there Python code examples for common DSA problems?</h3>
-    <p style="color:#555; line-height:1.5;">Yes, many online resources offer Python code examples for arrays, stacks, queues, trees, graphs, and sorting algorithms.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px;">
-    <h3 style="color:#34495e; font-size:18px; margin-bottom:8px;">19. How do I prepare for Python coding interviews focusing on DSA?</h3>
-    <p style="color:#555; line-height:1.5;">Practice solving Python coding challenges on platforms like HackerRank and focus on implementing data structures and algorithms efficiently.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px;">
-    <h3 style="color:#34495e; font-size:18px; margin-bottom:8px;">20. What is the role of Python in modern hacking and cybersecurity?</h3>
-    <p style="color:#555; line-height:1.5;">Python is extensively used for writing automation scripts, developing penetration testing tools, and analyzing vulnerabilities in cybersecurity.</p>
-  </div>
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card-grid">
+      <div class="card">Hands-on projects with source code</div>
+      <div class="card">Deployment ready Flask/Django apps</div>
+    </div>
   </section>
-</section>
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-about">
-      <h2>SyistGroup</h2>
-      <p>Empowering coders with practical knowledge and real-world projects. Learn, build, and grow your career with us.</p>
-    </div>
 
-    <div class="footer-links">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="/about">About Us</a></li>
-        <li><a href="/faq">FAQ</a></li>
-        <li><a href="/help">Help Center</a></li>
-        <li><a href="/trading">Trading</a></li>
-      </ul>
+  <!-- Frameworks -->
+  <section id="frameworks">
+    <h2>Explore Frameworks</h2>
+    <div class="card-grid">
+      <div class="card">TensorFlow</div>
+      <div class="card">PyTorch</div>
+      <div class="card">Scikit-Learn</div>
+      <div class="card">Pandas</div>
     </div>
+  </section>
 
-    <div class="footer-social">
-      <h3>Follow Us</h3>
-      <div class="social-icons">
-<a href="https://facebook.com/YourPage" target="_blank"><i class="fab fa-facebook-f"></i></a>
-<a href="https://twitter.com/YourUsername" target="_blank"><i class="fab fa-x-twitter"></i></a>
-<a href="https://instagram.com/YourUsername" target="_blank"><i class="fab fa-instagram"></i></a>
-<a href="https://linkedin.com/in/YourProfile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-<a href="https://youtube.com/@YourChannel" target="_blank"><i class="fab fa-youtube"></i></a>
-<a href="https://github.com/YourUsername" target="_blank"><i class="fab fa-github"></i></a>
-<a href="https://t.me/YourUsername" target="_blank"><i class="fab fa-telegram-plane"></i></a>
-<a href="mailto:yourname@example.com"><i class="fas fa-envelope"></i></a>
-      </div>
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p style="text-align:center;">Know more about my journey and work</p>
+  </section>
+
+  <!-- Animated Framework Section -->
+  <section class="marquee">
+    <div class="marquee-content">
+      <div class="circle">ML</div>
+      <div class="circle">DL</div>
+      <div class="circle">Flask</div>
+      <div class="circle">Django</div>
+      <div class="circle">Kivy</div>
+      <div class="circle">API</div>
+      <div class="circle">WebSocket</div>
+      <div class="circle">NumPy</div>
+      <div class="circle">Pandas</div>
+      <div class="circle">AI</div>
     </div>
-  </div>
+  </section>
 
-  <div class="footer-bottom">
-    <p>&copy; 2025 SyistGroup. All rights reserved. | Designed with ❤️ by Syist Team</p>
-  </div>
-</footer>
+  <!-- Quick Links -->
+  <section id="quicklinks">
+    <h2>Quick Links</h2>
+    <div class="card-grid">
+      <div class="card">Notes</div>
+      <div class="card">Interview</div>
+      <div class="card">Projects</div>
+      <div class="card">Community</div>
+      <div class="card">Discord</div>
+      <div class="card">Telegram</div>
+      <div class="card">Privacy Policy</div>
+      <div class="card">Terms</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Follow me: 
+      <a href="#">LinkedIn</a> | 
+      <a href="#">Twitter</a>
+    </p>
+    <p>&copy; 2025 SyistCode. All Rights Reserved.</p>
+  </footer>
+
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const toggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector("nav");
-      toggle.addEventListener("click", () => {
-        nav.classList.toggle("show");
-      });
-    });
-    
-  function showMoreReviews() {
-    const hiddenReviews = document.querySelectorAll('.review-card.hidden');
-    hiddenReviews.forEach(card => card.classList.remove('hidden'));
-    document.querySelector('.show-more-btn').style.display = 'none';
-  }
-
+    function toggleMenu(){
+      document.querySelector("nav ul").classList.toggle("active");
+    }
   </script>
 
 </body>
-          </html>
+</html>
+  
