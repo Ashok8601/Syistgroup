@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Interview Notes</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        /* --- CSS Styles Start Here --- */
+
+        /* --- Global & Paper Setup --- */
+        body {
+            background-color: #f8f0e3; /* Desk/Table background */
+            font-family: 'Droid Sans Mono', monospace; /* Monospace font for the code-note style */
+            display: flex;
+            flex-direction: column; /* Stack the page and the button */
+            align-items: center;
+            padding: 30px;
+            margin: 0;
+        }
+
+        /* The 'paper' container */
+        #notebook-page {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+            width: 800px;
+            padding: 50px 70px;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        /* Simulate the red margin line on a notebook */
+        #notebook-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 40px;
+            bottom: 0;
+            width: 2px;
+            background-color: #ff9999; /* Light red margin */
+        }
+
+        /* --- Ruled Lines --- */
+        #ruled-lines {
+            padding-bottom: 20px; 
+            background-image: repeating-linear-gradient(
+                #e9efff, /* Very light blue for the rule lines */
+                #e9efff 1.5em, /* Height of the line */
+                #ffffff 1.5em, /* Height of the gap */
+                #ffffff 3em /* Total height of line + gap (1.5em + 1.5em) */
+            );
+            background-size: 100% 3em; 
+            background-position: 0 10px; 
+            padding-top: 10px; 
+        }
+
+
+        /* --- Typography & Ink Colors --- */
+
+        /* Title styling (Blue Marker) */
+        #title-line h1 {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #0077cc; /* Blue ink color */
+            font-size: 2.2em;
+            margin-bottom: 5px;
+            border-bottom: 3px dashed #bbd0ff;
+            padding-bottom: 5px;
+        }
+
+        /* Headers/Subheadings - Dark Green Pen */
+        h2 {
+            color: #1a7d3b; /* Dark Green Ink */
+            font-size: 1.6em;
+            border-bottom: 2px solid #1a7d3b;
+            display: inline-block;
+            padding-bottom: 2px;
+            margin-top: 25px;
+        }
+
+        h3 {
+            color: #b33939; /* Red/Maroon Pen for minor titles (Q/A headings) */
+            margin-top: 15px;
+            font-size: 1.3em;
+        }
+
+        /* Body Text (p and li) - Monospace Font and Dark Blue Ink */
+        p, li {
+            color: #2c3e50; /* Very Dark Blue-Gray Ink Color */
+            font-family: monospace;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        /* Table styling for versions */
+        .version-table p {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+        .version-table span {
+            font-weight: bold;
+            color: #6a5acd; /* Purple pen color for versions */
+        }
+
+        /* Q&A Box Styling */
+        .qna-box {
+            border-left: 3px solid #1a7d3b;
+            padding-left: 15px;
+            margin: 20px 0;
+        }
+
+        .answer {
+            margin-top: -10px;
+        }
+
+        /* Highlighted text (Yellow Highlighter) */
+        .highlight {
+            background-color: rgba(255, 255, 0, 0.4); 
+            padding: 2px 5px;
+            border-radius: 3px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.05);
+            /* CRITICAL FIX for PDF: Ensures highlight rendering across page breaks */
+            box-decoration-break: clone; 
+        }
+
+        /* Code block (pre) - No rotation */
+        pre {
+            background-color: #f7f7f7;
+            border: 1px dashed #cccccc;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 0.9em;
+            margin: 10px 0;
+        }
+
+        #signature {
+            margin-top: 40px;
+            text-align: right;
+            font-style: italic;
+            color: #888888;
+            font-size: 1.1em;
+        }
+
+        /* --- Download Button Style --- */
+        #download-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2c3e50; /* Dark button color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+
+        #download-btn:hover {
+            background-color: #34495e;
+        }
+
+        /* Style for the interactive element (added by JS) */
+        .flashy {
+            color: red;
+            font-weight: bold;
+            transition: color 0.5s;
+        }
+
+        /* --- CSS Styles End Here --- */
+    </style>
+</head>
+<body>
+    <div id="notebook-page">
+        <div id="ruled-lines">
+            
+            <div id="title-line">
+                <h1>Python - Deep Dive Notes</h1>
+            </div>
+
+            <section id="intro">
+                <h2>✨ What is Python?</h2>
+                <p>A **High-Level, Interpreted, General-Purpose** language. It’s known for its focus on **readability** and simple syntax, which is why it's great for quick development and complex systems alike.</p>
+            </section>
+            
+            <hr>
+
+            <section id="features">
+                <h2>🔑 Key Features (The Basics)</h2>
+                <ol>
+                    <li>**Simple & Readable Syntax:** Uses English keywords, fewer lines of code compared to C++ or Java.</li>
+                    <li>**Interpreted:** No explicit compilation step. Code is executed line-by-line.</li>
+                    <li>**High-Level:** Handles memory management and garbage collection automatically.</li>
+                    <li>**Dynamically Typed:** Variable types are checked during execution, not when declared.
+                        <pre>x = 5          // integer
+x = "Hello"    // string - no declaration needed</pre>
+                    </li>
+                    <li>**Object-Oriented (OOP):** Supports classes, inheritance, and polymorphism.</li>
+                    <li>**Extensive Ecosystem:** Huge library collection:
+                        <ul>
+                            <li>Data Science: NumPy, Pandas 📊</li>
+                            <li>Web: Django, Flask 🌐</li>
+                            <li>AI/ML: TensorFlow, PyTorch 🤖</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+            
+            <hr>
+
+            <section id="history">
+                <h2>📜 History & Major Milestones</h2>
+                <ul>
+                    <li>**Who:** **Guido van Rossum** (Netherlands 🇳🇱).</li>
+                    <li>**When:** Started in **1989**.</li>
+                    <li>**First Release:** Python **1.0** in **1991**.</li>
+                </ul>
+
+                <h3>Major Versions:</h3>
+                <div class="version-table">
+                    <p><span>**P 2.0 (2000):**</span> List comprehensions, advanced garbage collection.</p>
+                    <p><span>**P 3.0 (2008):**</span> Major cleanup; **Not backwards compatible**. Introduced `print()` function.</p>
+                    <p><span>**P 3.5 (2015):**</span> Introduced **`async` and `await`** keywords for asynchronous programming. <span class="highlight">Very important for modern I/O operations.</span></p>
+                </div>
+            </section>
+            
+            <hr>
+
+            <section id="interview-qna">
+                <h2>❓ Top Interview Questions</h2>
+
+                <div class="qna-box">
+                    <h3>Q1. What is the difference between a list and a tuple?</h3>
+                    <p class="answer">**A.** The key difference is **mutability**. <span class="highlight">Lists are mutable (can be changed)</span>, while <span class="highlight">tuples are immutable (cannot be changed)</span>. Lists use square brackets `[]`, tuples use parentheses `()`. Tuples are faster and safer for fixed data.</p>
+                </div>
+
+                <div class="qna-box">
+                    <h3>Q2. What is a "docstring" in Python?</h3>
+                    <p class="answer">**A.** It's a string literal that occurs as the first statement in a module, function, class, or method definition. It's used to **document the code** and can be accessed using the `.__doc__` attribute.
+                        <pre>def my_func():
+    """This is the docstring for my_func."""
+    pass</pre>
+                    </p>
+                </div>
+
+                <div class="qna-box">
+                    <h3>Q3. Explain Python's Global Interpreter Lock (GIL).</h3>
+                    <p class="answer">**A.** The GIL is a **mutex** (lock) that prevents multiple native threads from executing Python bytecodes *simultaneously* in a single process. It makes Python effectively **single-threaded** for CPU-bound tasks, even on multi-core machines. It exists to simplify memory management and C-extension integration.</p>
+                </div>
+            </section>
+            
+            <div id="signature">~ Notes by **Engg Ashok Yadav**</div>
+        </div>
+    </div>
+    
+    <button id="download-btn">Download PDF: python_intro.pdf</button>
+
+    <script>
+        // --- JavaScript Code Start Here ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- 1. Interactive 'Flashy' Element ---
+            const dynamicHeading = document.querySelector('h2').nextElementSibling.querySelector('li:nth-child(4)');
+
+            if (dynamicHeading) {
+                dynamicHeading.innerHTML = dynamicHeading.innerHTML.replace('Dynamically Typed', '<span id="flash-word">Dynamically Typed</span>');
+                const flashWord = document.getElementById('flash-word');
+                if (flashWord) {
+                    flashWord.classList.add('flashy');
+                    setInterval(() => {
+                        if (flashWord.style.color === 'red') {
+                            flashWord.style.color = '#2c3e50'; 
+                        } else {
+                            flashWord.style.color = 'red'; 
+                        }
+                    }, 1000);
+                }
+            }
+
+            // --- 2. PDF Download Functionality ---
+            const downloadButton = document.getElementById('download-btn');
+            downloadButton.addEventListener('click', () => {
+                const element = document.getElementById('notebook-page');
+                
+                // Configuration for the PDF conversion (includes fixes for content capture)
+                const opt = {
+                    margin:       10,
+                    filename:     'python_intro.pdf', // Default name as requested
+                    image:        { type: 'jpeg', quality: 0.98 },
+                    html2canvas:  { 
+                        scale: 2, // Keep scale high for better resolution
+                        useCORS: true, // IMPORTANT: Allows capture of backgrounds and images
+                        allowTaint: true // IMPORTANT: Helps with capturing complex CSS/backgrounds
+                    },
+                    jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                };
+
+                // Use the html2pdf library to generate and download the PDF
+                html2pdf().set(opt).from(element).save();
+            });
+        });
+        // --- JavaScript Code End Here ---
+    </script>
+</body>
+                      </html>
