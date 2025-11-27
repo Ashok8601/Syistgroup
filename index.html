@@ -497,8 +497,6 @@
   <!-- ✅ Theme for Mobile Address Bar -->
   <meta name="theme-color" content="#0d0d0d" />
 
-</head>
-  <!-- Styles -->
   <style>
     *{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
 
@@ -597,7 +595,6 @@
 </head>
 <body>
 
-  <!-- Navbar -->
   <nav>
     <div class="logo">SyistCode</div>
     <ul>
@@ -613,19 +610,187 @@
     </div>
   </nav>
 
-  <!-- Search Bar -->
   <div class="search-wrapper">
     <input type="text" class="search-bar" placeholder="Search Notes, Projects, Frameworks...">
   </div>
 
-  <!-- Hero -->
   <section class="hero">
     <h1>MASTER THE ENTIRE PYTHON ECOSYSTEM</h1>
     <p>Your ultimate resource for Notes, PDFs, Interview Questions, Projects, DL, ML & AI</p>
     <a href="#start">START LEARNING NOW</a>
   </section>
+  
+  <section style="padding:40px 10px; font-family: sans-serif;">
+  <h2 style="text-align:center; font-size:26px; font-weight:700; color:#ff5722; margin-bottom:25px;">
+    Top 50 Programming Skills
+  </h2>
 
-  <!-- Notes -->
+  <div id="skillBox"
+       style="display:flex; overflow-x:auto; gap:20px; scroll-snap-type:x mandatory;
+              padding-bottom:20px; scroll-behavior:smooth; -webkit-overflow-scrolling: touch;">
+    </div>
+
+  <script>
+    // Icons aur Links ke saath Data Object
+    const skillsData = [
+      { name: "Python", icon: "fa-brands fa-python", color: "#3776AB" },
+      { name: "JavaScript", icon: "fa-brands fa-js", color: "#F7DF1E" },
+      { name: "HTML", icon: "fa-brands fa-html5", color: "#E34F26" },
+      { name: "CSS", icon: "fa-brands fa-css3-alt", color: "#1572B6" },
+      { name: "C", icon: "fa-solid fa-c", color: "#00599C" },
+      { name: "C++", icon: "fa-solid fa-code", color: "#00599C" },
+      { name: "Java", icon: "fa-brands fa-java", color: "#007396" },
+      { name: "SQL", icon: "fa-solid fa-database", color: "#003B57" },
+      { name: "Django", icon: "fa-solid fa-d", color: "#092E20" },
+      { name: "Flask", icon: "fa-solid fa-flask", color: "#000" },
+      { name: "React", icon: "fa-brands fa-react", color: "#61DAFB" },
+      { name: "Node.js", icon: "fa-brands fa-node", color: "#339933" },
+      { name: "Express.js", icon: "fa-brands fa-node-js", color: "#000" },
+      { name: "MongoDB", icon: "fa-solid fa-leaf", color: "#47A248" },
+      { name: "MySQL", icon: "fa-solid fa-database", color: "#4479A1" },
+      { name: "SQLite", icon: "fa-solid fa-server", color: "#003B57" },
+      { name: "Git", icon: "fa-brands fa-git-alt", color: "#F05032" },
+      { name: "GitHub", icon: "fa-brands fa-github", color: "#181717" },
+      { name: "Linux", icon: "fa-brands fa-linux", color: "#FCC624" },
+      { name: "Bash", icon: "fa-solid fa-terminal", color: "#4EAA25" },
+      { name: "Docker", icon: "fa-brands fa-docker", color: "#2496ED" },
+      { name: "Kubernetes", icon: "fa-solid fa-dharmachakra", color: "#326CE5" },
+      { name: "AWS", icon: "fa-brands fa-aws", color: "#FF9900" },
+      { name: "Azure", icon: "fa-brands fa-microsoft", color: "#0078D4" },
+      { name: "GCP", icon: "fa-brands fa-google", color: "#4285F4" },
+      { name: "TensorFlow", icon: "fa-solid fa-brain", color: "#FF6F00" },
+      { name: "PyTorch", icon: "fa-solid fa-fire", color: "#EE4C2C" },
+      { name: "NumPy", icon: "fa-solid fa-cube", color: "#013243" },
+      { name: "Pandas", icon: "fa-solid fa-table", color: "#150458" },
+      { name: "Matplotlib", icon: "fa-solid fa-chart-line", color: "#11557C" },
+      { name: "OpenCV", icon: "fa-solid fa-eye", color: "#5C3EE8" },
+      { name: "Machine Learning", icon: "fa-solid fa-robot", color: "#FF9900" },
+      { name: "Deep Learning", icon: "fa-solid fa-network-wired", color: "#FF9900" },
+      { name: "DSA", icon: "fa-solid fa-sitemap", color: "#222" },
+      { name: "REST API", icon: "fa-solid fa-cloud-arrow-down", color: "#E34F26" },
+      { name: "GraphQL", icon: "fa-solid fa-circle-nodes", color: "#E10098" },
+      { name: "FastAPI", icon: "fa-solid fa-bolt", color: "#009688" },
+      { name: "Bootstrap", icon: "fa-brands fa-bootstrap", color: "#7952B3" },
+      { name: "TailwindCSS", icon: "fa-solid fa-wind", color: "#38B2AC" },
+      { name: "TypeScript", icon: "fa-brands fa-js", color: "#3178C6" },
+      { name: "Next.js", icon: "fa-solid fa-n", color: "#000" },
+      { name: "Redux", icon: "fa-solid fa-arrows-spin", color: "#764ABC" },
+      { name: "Firebase", icon: "fa-solid fa-fire-flame-curved", color: "#FFCA28" },
+      { name: "Cybersecurity", icon: "fa-solid fa-shield-halved", color: "#222" },
+      { name: "Data Analysis", icon: "fa-solid fa-magnifying-glass-chart", color: "#222" },
+      { name: "OOPs", icon: "fa-solid fa-cubes", color: "#222" },
+      { name: "System Design", icon: "fa-solid fa-server", color: "#222" },
+      { name: "DevOps", icon: "fa-solid fa-infinity", color: "#222" },
+      { name: "Microservices", icon: "fa-solid fa-puzzle-piece", color: "#222" }
+    ];
+
+    const skillBox = document.getElementById("skillBox");
+
+    skillsData.forEach(item => {
+      // Create Anchor Tag instead of Div
+      const card = document.createElement("a");
+      
+      // Generate clean URL (spaces replaced by dashes)
+      const linkUrl = "/" + item.name.replace(/\s+/g, '-');
+      card.href = linkUrl;
+
+      card.style.cssText = `
+        flex: 0 0 80%;
+        max-width: 80%;
+        background: #fff;
+        padding: 25px 20px;
+        border-radius: 16px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        scroll-snap-align: center;
+        text-align: center;
+        text-decoration: none;
+        transition: transform 0.2s, box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: 1px solid #eee;
+      `;
+
+      card.innerHTML = `
+        <div style="font-size: 40px; margin-bottom: 15px; color: ${item.color || '#333'};">
+            <i class="${item.icon}"></i>
+        </div>
+        <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 8px; color: #222;">${item.name}</h3>
+        <p style="font-size: 14px; color: #666; margin: 0; line-height: 1.5;">
+          Learn ${item.name} with real-world examples.
+        </p>
+      `;
+
+      // Touch Effect
+      card.addEventListener("touchstart", () => card.style.transform = "scale(0.97)");
+      card.addEventListener("touchend", () => card.style.transform = "scale(1)");
+      
+      // Hover Effect (Desktop)
+      card.addEventListener("mouseenter", () => {
+          card.style.transform = "translateY(-3px)";
+          card.style.boxShadow = "0 8px 20px rgba(0,0,0,0.12)";
+      });
+      card.addEventListener("mouseleave", () => {
+          card.style.transform = "translateY(0)";
+          card.style.boxShadow = "0 4px 15px rgba(0,0,0,0.08)";
+      });
+
+      skillBox.appendChild(card);
+    });
+
+    /* ---- Slow + Smooth Swiping Control ---- */
+    let isDown = false, startX, scrollLeft;
+
+    skillBox.addEventListener("mousedown", e => {
+      isDown = true;
+      startX = e.pageX - skillBox.offsetLeft;
+      scrollLeft = skillBox.scrollLeft;
+      skillBox.style.scrollBehavior = "auto";
+      skillBox.style.cursor = "grabbing";
+    });
+
+    skillBox.addEventListener("mouseleave", () => {
+        isDown = false;
+        skillBox.style.cursor = "grab";
+    });
+    
+    skillBox.addEventListener("mouseup", () => {
+      isDown = false;
+      skillBox.style.scrollBehavior = "smooth";
+      skillBox.style.cursor = "grab";
+    });
+
+    skillBox.addEventListener("mousemove", e => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - skillBox.offsetLeft;
+      const walk = (x - startX) * 1.2;
+      skillBox.scrollLeft = scrollLeft - walk;
+    });
+    
+    // Prevent default link click while dragging
+    let isDragging = false;
+    skillBox.addEventListener("mousemove", () => isDragging = true);
+    skillBox.addEventListener("mousedown", () => isDragging = false);
+    
+    // Agar drag kiya hai to click event fire mat hone do (taaki link open na ho scroll karte waqt)
+    const links = skillBox.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Check if the user was dragging (moved the mouse significantly)
+            // Note: A slight movement is still detected as 'dragging'.
+            // For production, you'd want to calculate the actual distance moved.
+            if(isDragging && Math.abs(e.clientX - startX) > 5) { // Simple check for movement
+                e.preventDefault();
+            }
+        });
+    });
+
+  </script>
+</section>
+
   <section id="notes">
     <h2>Comprehensive Notes</h2>
     <div class="card-grid">
@@ -634,7 +799,6 @@
     </div>
   </section>
 
-  <!-- Interview -->
   <section id="interview">
     <h2>Interview Questions</h2>
     <div class="card-grid">
@@ -643,7 +807,6 @@
     </div>
   </section>
 
-  <!-- Projects -->
   <section id="projects">
     <h2>Projects</h2>
     <div class="card-grid">
@@ -652,7 +815,6 @@
     </div>
   </section>
 
-  <!-- Frameworks -->
   <section id="frameworks">
     <h2>Explore Frameworks</h2>
     <div class="card-grid">
@@ -663,13 +825,11 @@
     </div>
   </section>
 
-  <!-- About -->
   <section id="about">
     <h2>About Me</h2>
     <p style="text-align:center;">Know more about my journey and work</p>
   </section>
 
-  <!-- Animated Framework Section -->
   <section class="marquee">
     <div class="marquee-content">
       <div class="circle">ML</div>
@@ -685,7 +845,6 @@
     </div>
   </section>
 
-  <!-- Quick Links -->
   <section id="quicklinks">
     <h2>Quick Links</h2>
     <div class="card-grid">
@@ -700,7 +859,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>Follow me: 
       <a href="#">LinkedIn</a> | 
@@ -710,6 +868,7 @@
   </footer>
 
   <script>
+    // Navbar toggle script
     function toggleMenu(){
       document.querySelector("nav ul").classList.toggle("active");
     }
@@ -717,4 +876,3 @@
 
 </body>
 </html>
-  
