@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeMaster Pro | Test Your Typing Speed (WPM)</title>
+    
+    <meta name="description" content="Improve your typing speed with TypeMaster Pro. Free online typing test with real-time WPM, accuracy tracking, and performance charts.">
+    <meta name="keywords" content="typing test, wpm calculator, typing speed, keyboard practice, learn typing">
+    <meta name="author" content="TypeMaster Team">
+    
+    <link rel="stylesheet" href="test.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+</head>
+<body>
+
+<header class="main-header">
+    <h1>TypeMaster <span>Pro</span></h1>
+    <p>Professional Typing Speed Diagnostic Tool</p>
+</header>
+
+<main class="container">
+    <section class="controls-panel" aria-label="Test Settings">
+        <div class="control-group">
+            <label for="time-limit">Time Limit</label>
+            <select id="time-limit">
+                <option value="15">15 Seconds</option>
+                <option value="30" selected>30 Seconds</option>
+                <option value="60">1 Minute</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="diff-level">Difficulty</label>
+            <select id="diff-level">
+                <option value="easy">Beginner</option>
+                <option value="medium">Intermediate</option>
+                <option value="hard">Expert</option>
+            </select>
+        </div>
+
+        <button class="btn-primary" id="reset-btn">Restart Test</button>
+    </section>
+
+    <section class="typing-engine">
+        <div id="word-display" role="textbox" aria-readonly="true">
+            </div>
+        
+        <div class="input-wrapper">
+            <input type="text" id="input-field" autocomplete="off" placeholder="Click here and start typing..." aria-label="Typing input">
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-item">Time Left: <span id="timer">30</span>s</div>
+            <div class="stat-item">WPM: <span id="wpm">0</span></div>
+            <div class="stat-item">Accuracy: <span id="accuracy">100</span>%</div>
+        </div>
+    </section>
+
+    <section class="analytics-section">
+        <h3>Performance History</h3>
+        <div class="chart-wrapper">
+            <canvas id="performanceChart"></canvas>
+        </div>
+    </section>
+
+    <article class="content-info">
+        <h2>Why Test Your Typing Speed?</h2>
+        <p>Typing speed (WPM) is a critical skill in the digital age. Most professional jobs require at least 40-50 WPM. With TypeMaster Pro, you can track your progress using our advanced analytics and improve your muscle memory.</p>
+    </article>
+</main>
+
+<footer class="main-footer">
+    &copy; 2026 TypeMaster Pro. All rights reserved.
+</footer>
+
+<script src="test.js"></script>
+</body>
+</html>
